@@ -15,7 +15,7 @@ var orderMaxNum = 3;
 var setPageTime = 0;
 
 
-// redirectUrl 찾기
+// redirectUrl찾기
 var cType = 0;
 var surveyParam = '';
 if(location.search != null) {
