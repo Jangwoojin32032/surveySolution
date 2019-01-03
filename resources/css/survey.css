@@ -1,0 +1,291 @@
+
+/* 초기화 옵션값 */
+
+html, body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, span, form, fieldset, input, select, label, textarea, table, caption, thead, tfoot, tbody, tr, th, td
+{margin:0;padding:0;font:15px/1.5 '占쎄돌占쎈땸�⑥쥓逾�','nanumgothic','筌띾쵐占썸�⑥쥓逾�','Malgun Gothic',�뤃���뵝,Gulim,占쎈즻占쏙옙,Dotum,Sans-serif;color:#323232;-webkit-text-size-adjust:none;}
+b, span, strong, input, a, button{font-size:inherit;font-family:inherit;color:inherit}
+article, aside, dialog, footer, header, section, footer, nav, figure, hgroup, details, summary, figure, figcaption {display: block;}
+cite{display:inline}
+html,body {height:100%;}
+body {margin:0px;background:#E8E8E8;}
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+img{border:0;max-width:100%}
+label, input, textarea, select{vertical-align:middle;outline:none;cursor:pointer;}
+ol, ul{list-style:none;}
+table{border-collapse:collapse;table-layout:fixed;width:100%;}
+fieldset{border:none}
+.skip, hr, legend{position:absolute;left:-1000%;width:1px;height:1px;font-size:0;line-height:0;overflow:hidden;}
+button{margin:0;padding:0;border:none;background:none;outline:none;cursor:pointer;display:inline-block;}
+
+
+/* 박스 사진처리 */
+
+input[type="radio"] {
+    position: relative;
+    width: 19px;
+    height: 18px;
+    background: url(/resources/img/input_radio.png) no-repeat;
+    border: 0;
+    -webkit-appearance: none;
+    outline: None;
+    margin-right: 5px;
+}
+input[type="radio"]:checked:after {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 18px;
+    background: url(/resources/img/input_radio.png) no-repeat 0 -18px;
+}
+input[type="checkbox"] {
+    position: relative;
+    width: 19px;
+    height: 18px;
+    background: url(/resources/img/input_checkbox.png) no-repeat;
+    border: 0;
+    -webkit-appearance: none;
+    outline: None;
+    margin-right: 5px;
+}
+input[type="checkbox"]:checked:after {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 18px;
+    background: url(/resources/img/input_checkbox.png) no-repeat 0 -18px;
+}
+
+
+/* layout */
+
+.container{padding: 50px 0 50px;}
+.container>article{
+      margin:auto;
+      width: 1000px;
+      overflow:auto;
+      box-shadow:0 0 30px 0px gray;
+      background: white;
+      padding: 50px 20px;
+      box-sizing:border-box;
+      transform-origin: top;
+      transition: 0.3s;
+}
+
+/* 머리 */
+
+header{height: 100px;}
+header>img {
+    display: block;
+    background-size:100%;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+}
+/* header:before {
+     content: '';
+    display: block;
+    background: url(img/logo.png) no-repeat;
+    background-size:100%;
+    width: 200px;
+    height: 60px;
+    position: absolute;
+} */
+header aside{
+      float:right;
+      width: 220px;
+      height: 26px;
+      border:1px solid #B8BFC8;
+      padding: 3px;
+      box-sizing:border-box;
+      border-radius: 100px;
+      background-color: #ECF8FD;
+}
+header aside>div{
+     width: 50%;
+     height: 100%;
+     border-radius: 90px;
+     background-color: #00BFF2;
+     text-align: center;
+     font-weight:600;
+     color: white;
+     font-size: 13px;
+}
+header>aside:after {
+     content: "설문진행률 :";
+    color: #717070;
+    font-size: 17px;
+    position: relative;
+    left: -100px;
+    top: -21px;
+}
+header>div{
+     float: right;
+     clear: both;
+     padding:20px 0 0 0;
+}
+header>div a{
+     cursor: pointer;
+}
+header>div.size>div:nth-child(2){
+     display: inline-block;
+     background: #00BFF2;
+     border-radius: 12px;
+     font-weight: 600;
+     color: white;
+     font-size: 17px;
+     height: 23px;
+     width: 70px;
+     text-align: center;
+     line-height: 23px;
+     position: relative;
+     top: -1px;
+}
+header>div.size>div{
+     font-size: 20px;
+     display: inline-block;
+     background: #00BFF2;
+     border-radius: 12px;
+     font-weight: bold;
+     color: white;
+     width: 23px;
+     height: 23px;
+     text-align: center;
+     line-height: 23px;
+}
+header>div.size:before{
+     content: attr(data-cell);
+    position: relative;
+    top: -2px;
+    color: #717070;
+    font-size: 15px;
+}
+.numberUpDown{display: none;}
+
+/* 몸 */
+
+.contents{clear: both;border: 1px solid silver;margin-bottom: 20px;}
+.contents>article:nth-child(1){
+      border-bottom: 1px solid silver;
+      overflow: auto;
+      background: #e4eef6;
+}
+.contents>article:nth-child(1)>div:nth-child(1){
+     float: left;
+     width: 10%;
+     padding: 10px 0 10px 10px;
+     box-sizing:border-box;
+     text-align: center;
+     font-weight: bold;
+}
+.contents>article:nth-child(1)>div:nth-child(2){
+     float: left;
+     width: 90%;
+     padding: 10px 10px 10px 0;
+     box-sizing:border-box;
+     font-weight: 600;
+}
+.survey_form{
+     padding:10px;
+     box-sizing:border-box;
+     overflow: auto
+}
+.contents input[type='text']{
+     border: 1px solid gray;
+}
+
+/* 다리 */
+
+footer {
+	text-align: center;
+	margin-top: 50px;
+}
+footer>button{	
+    padding: 10px 30px;
+    background: #00BFF2;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* 문의 */
+article>div.inquiry{     
+	float: right;
+    background: #00BFF2;
+    border-radius: 12px;
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+    height: 23px;
+    width: 100px;
+    text-align: center;
+    line-height: 23px;
+    position: relative;
+    top: -1px;
+    cursor:pointer;
+}
+
+/* 설문폼 */
+
+/* ui */
+.survey_form ul li{padding:3px 0 3px 30px;float:left;box-sizing:border-box;width:100%;}
+.survey_form ul li:hover{background:#ffdfbf;}
+ul.domain2>li{
+     width: 50%;
+}
+ul.domain3>li{
+     width: 33.3%;   
+}
+ul.domain4>li{
+     width: 25%;
+} 
+
+/* 테이블 */
+.survey_form .measure td{
+     text-align: center;
+     border: 1px solid silver;
+     height: 40px;
+}
+.survey_form .measure thead td{
+     background: #eff2f5;
+}    
+.item_title{
+     text-align: left !important;
+     padding: 0 10px 0 30px;
+}
+
+
+
+@media ( min-width:300px ) and ( max-width: 1000px ){
+     .container{padding: 10px;}
+     .container>article{
+           width: 100%;    
+           padding: 35px 20px;
+     }
+     header{height: 60px;}
+     header>img {
+         width: 100px;
+         height: 30px;
+     }
+     header aside{width: 120px;}
+     .contents>article:nth-of-type(1)>div:nth-child(1){
+           padding: 10px 0 10px 7px;
+           width: 15%;                                                                                                                                                                              
+           text-align: left;
+     }
+     .contents>article:nth-child(1)>div:nth-child(2){width: 85%;}
+     .survey_form{
+           padding:10px;
+           box-sizing:border-box;
+           overflow: auto
+     }
+     footer {margin-top: 35px;}
+     .survey_form ul li{padding:3px 0 3px 10px;}
+     ul.domain3>li{width: 50%;}
+     ul.domain4>li{width: 50%;}
+     .item_title{padding: 0 0 0 10px;}
+     /* .size{display: none;} */
+}
+
+     

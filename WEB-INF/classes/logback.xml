@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>.%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg %n
+			</Pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFOR</level>
+		</filter>
+	</appender>
+
+  	<appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${catalina.home}/logs/smartpanel/web.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		    <!-- daily rollover -->
+			<FileNamePattern>${catalina.home}/logs/smartpanel/smartpanelWeb.%d{yyyy-MM-dd}.log</FileNamePattern>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>			
+		</rollingPolicy>
+
+		<encoder>
+			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+		</encoder> 	    
+  	</appender>
+    
+    <logger name="profiling" additivity="false">
+	    <level value="INFOR" />
+		<appender-ref ref="profilingRollingFileAppender"/>
+		<appender-ref ref="consoleAppender" />
+	</logger>
+    
+	<logger name="kr.co.netpoint" additivity="false">
+	    <level value="INFOR" />
+		<appender-ref ref="dailyRollingFileAppender"/>
+		<!-- <appender-ref ref="minuteRollingFileAppender"/> -->
+		<appender-ref ref="consoleAppender" />
+	</logger>
+	
+	<logger name="org.springframework.web.servlet.DispatcherServlet" additivity="false">
+	    <level value="INFOR" />
+		<appender-ref ref="dailyRollingFileAppender"/>
+		<appender-ref ref="consoleAppender" />
+	</logger>
+	
+	<logger name="java.sql" additivity="false">
+	    <level value="INFOR" />
+		<appender-ref ref="dailyRollingFileAppender"/>
+		<appender-ref ref="consoleAppender" />
+	</logger>
+	
+	<logger name="org.mybatis" additivity="false">
+	    <level value="INFOR" />
+		<appender-ref ref="dailyRollingFileAppender"/>
+		<appender-ref ref="consoleAppender" />
+	</logger>
+	
+	<root>
+		<level value="INFOR" />
+		<appender-ref ref="consoleAppender" />
+	</root>
+</configuration>

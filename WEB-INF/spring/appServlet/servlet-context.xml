@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="kr.co.netpoint" />
+
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="2"/>
+		<property name="contentType" value="text/html;charset=UTF-8"/>
+	</bean>
+	
+	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver" >
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+        <property name="order" value="1"/>
+    </bean>
+	
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+   			<list>
+	   			<value>/WEB-INF/tiles/tiles-layout.xml</value>
+   			</list>
+   		</property>
+	</bean>
+	
+	<bean id="beanNameResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+   		<property name="order" value="0"/>
+	</bean>	
+
+	<bean id="jsonMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+		<property name="contentType" value="text/html;charset=UTF-8"/>
+	</bean>
+	
+	<mvc:annotation-driven/>
+        <!-- <mvc:message-converters>
+            <ref bean="jacksonMessageConverter" />
+        </mvc:message-converters>
+    </mvc:annotation-driven> -->
+	
+	<beans:bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+    	<property name="supportedMediaTypes">
+    		<list>
+				<value>application/json;charset=UTF-8</value>
+			</list>
+    	</property>
+    </beans:bean>
+    
+    <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="100000000"/>
+        <property name="maxInMemorySize" value="100000000"/>
+    </beans:bean>
+    
+    <bean id="beanDownloadView" class="kr.co.netpoint.common.DownloadView" />
+    <beans:bean id="a" class="kr.co.netpoint.common.DownloadView"/>
+    <beans:bean name="excelView" class="kr.co.netpoint.common.ExcelView"/>
+    <beans:bean name="excelGuide" class="kr.co.netpoint.common.ExcelGuide"/>
+    <!-- <mvc:interceptors>
+    	<mvc:interceptor>
+    		<mvc:mapping path="/**/*" />
+    		<mvc:exclude-mapping path="/resources/**"/>
+    		<mvc:exclude-mapping path="/login/**"/>
+    		<mvc:exclude-mapping path="/project/projectReg"/>
+    		<beans:bean class="kr.co.netpoint.common.LoginCheckInterceptor"/>
+    	</mvc:interceptor>
+    </mvc:interceptors> -->
+    
+</beans>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="oProject" >
+
+	<resultMap id="PnClientResultMap" type= "kr.co.netpoint.vo.project.PnClientVO" >
+		<result column="VENDOR_ID" property="uCode" jdbcType="INTEGER" />
+		<result column="CLIENT_MANAGER_NAME" property="uCode" jdbcType="VARCHAR" />
+		<result column="CLIENT_PHONE" property="uCode" jdbcType="VARCHAR" />
+		<result column="CLIENT_EMAIL" property="uCode" jdbcType="VARCHAR" />
+	</resultMap >
+	<resultMap id="PnProjectResultMap" type= "kr.co.netpoint.vo.project.PnProjectVO" >
+		<result column="PROJ_ID" property="projId" jdbcType="INTEGER" />
+		<result column="TITLE_INNER" property="titleInner" jdbcType="VARCHAR" />
+		<result column="TITLE_OUTER" property="titleOuter" jdbcType="VARCHAR" />
+		<result column="PROJ_NUM" property="projNum" jdbcType="VARCHAR" />
+		<result column="PM_NAME" property="pmName" jdbcType="VARCHAR" />
+	</resultMap >
+
+	<sql id ="Column_PnClient" >		
+		VENDOR_ID,
+		CLIENT_MANAGER_NAME,
+		CLIENT_PHONE,
+		CLIENT_EMAIL
+	</sql >
+
+	<select id ="listPnClient" resultMap="PnClientResultMap">
+		SELECT
+			<include refid ="Column_PnClient" />
+		FROM PN_CLIENT
+		<where>
+			<if test= "vendorId != null and !vendorId.equals('')" >
+				VENDOR_ID = #{vendorId}
+			</if>
+		</where>
+	</select >
+	
+	<select id ="selectPnProject" resultMap="PnProjectResultMap">
+		SELECT 
+			PROJ_ID
+			, TITLE_INNER
+			, TITLE_OUTER
+			, PROJ_NUM
+			, PM_NAME
+		FROM PN_PROJECT
+		<where>
+			<if test= "projId != null and !projId.equals('')" >
+				PROJ_ID = #{projId}
+			</if>
+		</where>
+	</select >
+	
+	<select id ="selectClientVendorGroup" parameterType="java.lang.String" resultType="hashmap">
+		SELECT
+			PC.VENDOR_ID AS vendorId, VE.VENDOR_NAME as vendorName
+		FROM PN_CLIENT PC
+		JOIN VENDOR VE
+		ON PC.VENDOR_ID = VE.VENDOR_ID
+		<if test= "null != value and !value.equals('')" >
+			WHERE VE.VENDOR_NAME = #{value}
+		</if>
+		GROUP BY PC.VENDOR_ID, VE.VENDOR_NAME
+		ORDER BY  VE.VENDOR_NAME
+	</select >
+	
+	<insert id="insertInquiry">
+		insert into CUSTOMER_QNA
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+				CUSTOMER_QNA_ID,
+			<if test="uCode != null" >
+        		UCODE,
+      		</if>
+			<if test="userEmail != null" >
+        		CUS_EMAIL,
+      		</if>
+			<if test="inquiryTitle != null" >
+        		ASK_TITLE,
+      		</if>
+			<if test="inquiryContents != null" >
+        		ASK_TXT,
+      		</if>
+      			READ_YN,
+      			STATE,
+      			REG_DAY,
+      			GUBUN        		
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+				SEQ_CUSTOMER_QNA_ID.NEXTVAL,
+			<if test="uCode != null" >
+        		#{uCode},
+			</if>
+			<if test="userEmail != null" >
+        		#{userEmail},
+			</if>
+			<if test="inquiryTitle != null" >
+        		#{inquiryTitle},
+			</if>
+			<if test="inquiryContents != null" >
+        		#{inquiryContents},
+			</if>
+				'N',
+				'0',
+				TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS'),
+				'sp'
+		</trim>
+	</insert>	
+</mapper>

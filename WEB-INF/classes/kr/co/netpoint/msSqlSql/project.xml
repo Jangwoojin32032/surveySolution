@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="msProject" >
+		
+	<select id="selectTbProject" resultType="int">
+		select count(CSeq)
+		from tb_Project
+		<where>
+			and CProjectId = #{CProjectId}
+			<if test= "CPCode != null and !CPCode.equals('')" >
+				and CPCode = #{CPCode}
+			</if>			
+		</where>
+	</select>
+	
+	<select id="selectCPNOTbProject" resultType="String">
+		select CPNo
+		from tb_Project
+		where CProjectId = #{CProjectId}
+	</select>
+	
+	<insert id="insertTbProject">
+		insert into tb_Project
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="CPCode != null and !CPCode.equals('')">
+        		CPCode,
+      		</if>
+			<if test="CPName != null and !CPName.equals('')" >
+        		CPName,
+      		</if>
+      		CUserID,
+			CType,
+			<if test="CPEx != null and !CPEx.equals('')" >
+				CPEx,
+			</if>
+			<if test="CProjectId != null and !CProjectId.equals('')" >
+				CProjectId,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="CPCode != null and !CPCode.equals('')">
+        		#{CPCode},
+			</if>
+			<if test="CPName != null and !CPName.equals('')" >
+        		#{CPName},
+			</if>
+			'admin',
+			'A',
+			<if test="CPEx != null and !CPEx.equals('')" >
+        		#{CPEx},
+			</if>
+			<if test="CProjectId != null and !CProjectId.equals('')" >
+        		#{CProjectId},
+			</if>
+		</trim>
+	</insert>
+		
+	<update id="updateTbProject">
+		update tb_Project
+		<trim prefix="set " suffixOverrides="," > 
+			<if test= "CPName != null and !CPName.equals('')" >
+        		CPName = #{CPName},
+      		</if>
+			<if test= "CPEx != null and !CPEx.equals('')" >
+        		CPEx = #{CPEx},
+      		</if>
+		</trim>	
+		where CProjectId = #{CProjectId}
+	</update>
+	
+	<update id="updateTbProjectCStartDate">
+		update tb_Project
+		set CStartDate = #{regDate}
+		where CProjectId = #{projectId}
+	</update>
+	
+	<update id="updateTbProjectCEndDate">
+		update tb_Project
+		set CEndDate = #{regDate}
+		where CProjectId = #{projectId}
+	</update>
+	
+	<select id="selectTbAnswer2" resultType="int">
+		select count(CUserID)
+		from tb_answer2
+		<where>
+			and CPNo = #{cpno}
+			<if test= "cuserid != null and !cuserid.equals('')" >
+				and CUserID = #{cuserid} 
+			</if>
+		</where>
+	</select>
+	
+	<insert id="insertTbAnswer2">
+		insert into tb_answer2
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="cpno != null" >
+        		CPNo,
+      		</if>
+			<if test="cqno != null" >
+        		CQNo,
+      		</if>
+      		<if test="csubqno != null" >
+        		CSubQNo,
+      		</if>
+      		<if test="cuserid != null" >
+        		CUserID,
+      		</if>
+      		<if test="cuserIP != null" >
+        		CUserIP,
+      		</if>
+      		CInsertDate,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="cpno != null" >
+        		#{cpno},
+			</if>
+			<if test="cqno != null" >
+        		#{cqno},
+			</if>
+			<if test="csubqno != null" >
+        		#{csubqno},
+			</if>
+			<if test="cuserid != null" >
+        		#{cuserid},
+			</if>
+			<if test="cuserIP != null" >
+        		#{cuserIP},
+			</if>
+			GETDATE(),
+		</trim>
+	</insert>
+</mapper>

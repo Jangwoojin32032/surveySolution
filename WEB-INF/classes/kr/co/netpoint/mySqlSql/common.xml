@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mCommon" >
+
+	<resultMap id="CodeResultMap" type= "kr.co.netpoint.vo.project.SlCodeVO" >
+		<result column="codeType" property="codeType" jdbcType="VARCHAR" />
+		<result column="codeId" property="codeId" jdbcType="VARCHAR" />
+		<result column="codeValue" property="codeValue" jdbcType="VARCHAR" />
+		<result column="codeOrder" property="codeOrder" jdbcType="INTEGER" />
+	</resultMap >
+	
+	<select id ="selectCode" resultMap="CodeResultMap">
+		select
+			codeType, codeId, codeValue, codeOrder 
+		from survey.sl_code 
+		where codeType = #{codeType}
+			<if test= "null != searchVO and null != searchVO.searchValue and !searchVO.searchValue.equals('') and !searchVO.searchValue.equals(' ')" >
+				and binary(codeValue) = #{searchVO.searchValue} 
+			</if>
+		order by codeOrder asc
+	</select >
+	
+</mapper>

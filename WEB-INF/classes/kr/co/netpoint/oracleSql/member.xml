@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="oMember" >
+
+	<resultMap id="PnAdminResultMap" type= "kr.co.netpoint.vo.project.PnAdminVO" >
+		<result column="ID" property="id" jdbcType="VARCHAR" />
+		<result column="PASSWD" property="passWd" jdbcType="VARCHAR" />
+		<result column="SALT" property="salt" jdbcType="VARCHAR" />
+		<result column="NAME" property="name" jdbcType="VARCHAR" />
+		<result column="EMAIL" property="email" jdbcType="VARCHAR" />
+		<result column="AUTH" property="auth" jdbcType="INTEGER" />
+		<result column="COMPANY" property="company" jdbcType="VARCHAR" />
+		<result column="REAL_YN" property="realYn" jdbcType="VARCHAR" />
+	</resultMap >
+
+	<sql id ="Column_PnAdmin" >
+		ID,
+		PASSWD,
+		SALT,
+		NAME,
+		EMAIL,
+		AUTH,
+		COMPANY,
+		REAL_YN
+	</sql >
+
+	<select id ="selectPnAdmin" resultMap="PnAdminResultMap">
+		SELECT
+			<include refid ="Column_PnAdmin" />
+		FROM PN_ADMIN
+		<where>
+			<if test= "id != null and !id.equals('')" >
+				AND ID = #{id}
+			</if>
+			<if test= "passWd != null and !passWd.equals('')" >
+				AND PASSWD = #{passWd}
+			</if>
+			and REAL_YN = 'Y'
+		</where>
+	</select >
+	
+</mapper>

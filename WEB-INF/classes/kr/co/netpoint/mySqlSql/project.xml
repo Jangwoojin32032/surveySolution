@@ -1,0 +1,2630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mProject" >
+	
+	<resultMap id="SlProjectResultMap" type= "kr.co.netpoint.vo.project.SlProjectVO" >
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="projId" property="projId" jdbcType="INTEGER" />
+		<result column="projectNum" property="projectNum" jdbcType="VARCHAR" />
+		<result column="businessId" property="businessId" jdbcType="VARCHAR" />
+		<result column="jobCode" property="jobCode" jdbcType="VARCHAR" />
+		<result column="projectNameInner" property="projectNameInner" jdbcType="VARCHAR" />
+		<result column="projectNameOuter" property="projectNameOuter" jdbcType="VARCHAR" />
+		<result column="surveyDisign" property="surveyDisign" jdbcType="VARCHAR" />
+		<result column="customerCode" property="customerCode" jdbcType="VARCHAR" />
+		<result column="pmCode" property="pmCode" jdbcType="VARCHAR" />
+		<result column="usePc" property="usePc" jdbcType="VARCHAR" />
+		<result column="usePc" property="usePc" jdbcType="VARCHAR" />
+		<result column="logoImgDirectory" property="logoImgDirectory" jdbcType="VARCHAR" />
+		<result column="logoImgFullPath" property="logoImgFullPath" jdbcType="VARCHAR" />
+		<result column="logoImgSaveName" property="logoImgSaveName" jdbcType="VARCHAR" />
+		<result column="logoImgOriginalName" property="logoImgOriginalName" jdbcType="VARCHAR" />
+		<result column="useBack" property="useBack" jdbcType="VARCHAR" />
+		<result column="useResearBanner" property="useResearBanner" jdbcType="VARCHAR" />
+		<result column="useResearList" property="useResearList" jdbcType="VARCHAR" />
+		<result column="useLanguage" property="useLanguage" jdbcType="VARCHAR" />
+		<result column="useFollowing" property="useFollowing" jdbcType="VARCHAR" />
+		<result column="surveyUrl" property="surveyUrl" jdbcType="VARCHAR" />
+		<result column="serveyTestUrl" property="serveyTestUrl" jdbcType="VARCHAR" />
+		<result column="useTest" property="useTest" jdbcType="VARCHAR" />
+		<result column="projectState" property="projectState" jdbcType="VARCHAR" />
+		<result column="quater" property="quater" jdbcType="VARCHAR" />
+		<result column="cpno" property="cpno" jdbcType="VARCHAR" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlRedirectUrlResultMap" type= "kr.co.netpoint.vo.project.SlRedirectUrlVO" >
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="redirectType" property="redirectType" jdbcType="INTEGER" />
+		<result column="redirectUrl" property="redirectUrl" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlHardCodingResultMap" type= "kr.co.netpoint.vo.project.SlHardCodingVO" >
+		<result column="hardCodingId" property="hardCodingId" jdbcType="INTEGER" />
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="fileDirectory" property="fileDirectory" jdbcType="VARCHAR" />
+		<result column="fileFullPath" property="fileFullPath" jdbcType="VARCHAR" />
+		<result column="fileSaveName" property="fileSaveName" jdbcType="VARCHAR" />
+		<result column="fileOriginalName" property="fileOriginalName" jdbcType="VARCHAR" />
+		<result column="hardCodingTableName" property="hardCodingTableName" jdbcType="VARCHAR" />
+		<result column="questionSaveColumn" property="questionSaveColumn" jdbcType="VARCHAR" />
+		<result column="pageBaseHistory" property="pageBaseHistory" jdbcType="VARCHAR" />
+		<result column="pageLotationHistory" property="pageLotationHistory" jdbcType="VARCHAR" />
+		<result column="usePageHistory" property="usePageHistory" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlQuestionResultMap" type= "kr.co.netpoint.vo.project.SlQuestionVO" >
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="hardCodingId" property="hardCodingId" jdbcType="INTEGER" />
+		<result column="questionId" property="questionId" jdbcType="INTEGER" />
+		<result column="questionName" property="questionName" jdbcType="VARCHAR" />
+		<result column="questionHeader" property="questionHeader" jdbcType="VARCHAR" />
+		<result column="questionTitle" property="questionTitle" jdbcType="VARCHAR" />
+		<result column="questionFooter" property="questionFooter" jdbcType="VARCHAR" />
+		<result column="questionOption" property="questionOption" jdbcType="VARCHAR" />
+		<result column="questionType" property="questionType" jdbcType="VARCHAR" />
+		<result column="questionDivision" property="questionDivision" jdbcType="VARCHAR" />
+		<result column="questionLogic" property="questionLogic" jdbcType="VARCHAR" />
+		<result column="questionOrder" property="questionOrder" jdbcType="INTEGER" />
+		<result column="responseLimit" property="responseLimit" jdbcType="INTEGER" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+		<result column="deleteYn" property="deleteYn" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlExampleResultMap" type= "kr.co.netpoint.vo.project.SlExampleVO" >
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="questionId" property="questionId" jdbcType="INTEGER" />
+		<result column="exampleId" property="exampleId" jdbcType="INTEGER" />
+		<result column="exampleText" property="exampleText" jdbcType="VARCHAR" />
+		<result column="exampleLogicText" property="exampleLogicText" jdbcType="VARCHAR" />
+		<result column="exampleValue" property="exampleValue" jdbcType="VARCHAR" />
+		<result column="exampleOrder" property="exampleOrder" jdbcType="INTEGER" />
+		<result column="columnName" property="columnName" jdbcType="INTEGER" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+		<result column="deleteYn" property="deleteYn" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlQuestionFunctionResultMap" type= "kr.co.netpoint.vo.project.SlQuestionFunctionVO" >
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="questionId" property="questionId" jdbcType="INTEGER" />
+		<result column="functionId" property="functionId" jdbcType="INTEGER" />
+		<result column="functionType" property="functionType" jdbcType="VARCHAR" />
+		<result column="functionText" property="functionText" jdbcType="VARCHAR" />
+		<result column="functionValue" property="functionValue" jdbcType="VARCHAR" />
+		<result column="functionOrder" property="functionOrder" jdbcType="INTEGER" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+		<result column="deleteYn" property="deleteYn" jdbcType="VARCHAR" />
+	</resultMap >
+	<resultMap id="SlQuestionLogicResultMap" type= "kr.co.netpoint.vo.project.SlQuestionLogicVO" >
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="questionId" property="questionId" jdbcType="INTEGER" />
+		<result column="logicId" property="logicId" jdbcType="INTEGER" />
+		<result column="logicType" property="logicType" jdbcType="VARCHAR" />
+		<result column="state" property="state" jdbcType="VARCHAR" />
+		<result column="questionNameBase" property="questionNameBase" jdbcType="VARCHAR" />
+		<result column="exampleNameBase" property="exampleNameBase" jdbcType="INTEGER" />
+		<result column="exampleValueBase" property="exampleValueBase" jdbcType="VARCHAR" />
+		<result column="questionNameTarget" property="questionNameTarget" jdbcType="VARCHAR" />
+		<result column="exampleNameTarget" property="exampleNameTarget" jdbcType="VARCHAR" />
+		<result column="exampleValueTarget" property="exampleValueTarget" jdbcType="VARCHAR" />
+	</resultMap >
+	<resultMap id="SlquaterResultMap" type= "kr.co.netpoint.vo.project.SlQuaterVO" >
+		<result column="quaterId" property="quaterId" jdbcType="INTEGER" />
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="quaterRowInfo" property="quaterRowInfo" jdbcType="VARCHAR" />
+		<result column="quaterRowQueName" property="quaterRowQueName" jdbcType="VARCHAR" />
+		<result column="quaterRowQueId" property="quaterRowQueId" jdbcType="VARCHAR" />		
+		<result column="quaterColInfo" property="quaterColInfo" jdbcType="VARCHAR" />
+		<result column="quaterColQueName" property="quaterColQueName" jdbcType="VARCHAR" />
+		<result column="quaterColQueId" property="quaterColQueId" jdbcType="VARCHAR" />
+		<result column="quaterType" property="quaterType" jdbcType="VARCHAR" />		
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlQuaterCountResultMap" type= "kr.co.netpoint.vo.project.SlQuaterCountVO" >
+		<result column="quaterCountId" property="quaterCountId" jdbcType="INTEGER" />
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="quaterTotalCount" property="quaterTotalCount" jdbcType="INTEGER" />
+		<result column="quaterActiveCount" property="quaterActiveCount" jdbcType="INTEGER" />
+		<result column="quaterContent" property="quaterContent" jdbcType="VARCHAR" />
+		<result column="quaterPosition" property="quaterPosition" jdbcType="VARCHAR" />
+		<result column="quaterOrder" property="quaterOrder" jdbcType="INTEGER" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlQuaterUserResultMap" type= "kr.co.netpoint.vo.project.SlQuaterUserVO" >
+		<result column="quaterUserId" property="quaterUserId" jdbcType="INTEGER" />
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="questionContent" property="questionContent" jdbcType="VARCHAR" />
+		<result column="quaterInOut" property="quaterInOut" jdbcType="VARCHAR" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlBoosterResultMap" type= "kr.co.netpoint.vo.project.SlBoosterVO" >
+		<result column="boosterId" property="boosterId" jdbcType="INTEGER" />
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="questionId" property="questionId" jdbcType="INTEGER" />
+		<result column="boosterInfo" property="boosterInfo" jdbcType="VARCHAR" />
+		<result column="boosterPosition" property="boosterPosition" jdbcType="VARCHAR" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlQuestionViewResultMap" type= "kr.co.netpoint.vo.project.SlQuestionViewPageVO" >
+		<result column="vPageId" property="vPageId" jdbcType="INTEGER" />
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="pageTitleQuestionId" property="pageTitleQuestionId" jdbcType="VARCHAR" />
+		<result column="pageTitleQuestionName" property="pageTitleQuestionName" jdbcType="VARCHAR" />
+		<result column="pageQuestionIds" property="pageQuestionIds" jdbcType="VARCHAR" />
+		<result column="pageQuestionNames" property="pageQuestionNames" jdbcType="VARCHAR" />
+		<result column="pageOrder" property="pageOrder" jdbcType="INTEGER" />
+		<result column="regdate" property="regdate" jdbcType="VARCHAR" />
+		<result column="questionType" property="questionType" jdbcType="VARCHAR" />
+		<result column="checkMoveQType" property="checkMoveQType" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="SlQuestionViewAllResultMap" extends="SlQuestionViewResultMap" type= "kr.co.netpoint.vo.project.SlQuestionViewPageVO" >
+		<result column="questionType" property="questionType" jdbcType="VARCHAR" />
+		<result column="checkMoveQType" property="checkMoveQType" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="slRotationMainResultMap" type= "kr.co.netpoint.vo.project.SlRotationMainVO" >
+		<result column="rotMainId" property="rotMainId" jdbcType="INTEGER" />
+		<result column="rotMainTitle" property="rotMainTitle" jdbcType="VARCHAR" />
+		<result column="rotMainType" property="rotMainType" jdbcType="VARCHAR" />
+		<result column="rotMainSetUser" property="rotMainSetUser" jdbcType="VARCHAR" />
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="rotMainQuestionId" property="rotMainQuestionId" jdbcType="INTEGER" />
+		<result column="rotMainQuestionName" property="rotMainQuestionName" jdbcType="VARCHAR" />
+		<result column="rotMainQuestionType" property="rotMainQuestionType" jdbcType="VARCHAR" />
+		<result column="rotMainQuestionCheckNum" property="rotMainQuestionCheckNum" jdbcType="VARCHAR" />
+		<result column="rotQuestionNames" property="rotQuestionNames" jdbcType="VARCHAR" />
+		<result column="rotFinalQuestionName" property="rotFinalQuestionName" jdbcType="VARCHAR" />
+		<result column="exitQuestionName" property="exitQuestionName" jdbcType="VARCHAR" />
+		<result column="rotMMaxCount" property="rotMMaxCount" jdbcType="INTEGER" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+		<result column="delYn" property="delYn" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="slRotationPartResultMap" type= "kr.co.netpoint.vo.project.SlRotationPartVO" >
+		<result column="rotPartId" property="rotPartId" jdbcType="INTEGER" />
+		<result column="rotMainId" property="rotMainId" jdbcType="INTEGER" />
+		<result column="rotPartTitle" property="rotPartTitle" jdbcType="VARCHAR" />
+		<result column="rotPartOrder" property="rotPartOrder" jdbcType="INTEGER" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+		<result column="delYn" property="delYn" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="slRotationQuestionResultMap" type= "kr.co.netpoint.vo.project.SlRotationQuestionVO" >
+		<result column="rotId" property="rotId" jdbcType="INTEGER" />
+		<result column="rotPartId" property="rotPartId" jdbcType="INTEGER" />
+		<result column="rotTitle" property="rotTitle" jdbcType="VARCHAR" />
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="rotQuestionId" property="rotQuestionId" jdbcType="INTEGER" />
+		<result column="rotQuestionName" property="rotQuestionName" jdbcType="VARCHAR" />
+		<result column="rotQuestionType" property="rotQuestionType" jdbcType="VARCHAR" />
+		<result column="rotSaveFileName" property="rotSaveFileName" jdbcType="VARCHAR" />
+		<result column="rotQuestionCheckNum" property="rotQuestionCheckNum" jdbcType="VARCHAR" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+		<result column="delYn" property="delYn" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="slRotationExampleResultMap" type= "kr.co.netpoint.vo.project.SlRotationExampleVO" >
+		<result column="rotId" property="rotId" jdbcType="INTEGER" />
+		<result column="rotMainId" property="rotMainId" jdbcType="INTEGER" />
+		<result column="rotTitle" property="rotTitle" jdbcType="VARCHAR" />
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="rotExampleId" property="rotExampleId" jdbcType="INTEGER" />
+		<result column="rotExampleValue" property="rotExampleValue" jdbcType="VARCHAR" />
+		<result column="rotExampleText" property="rotExampleText" jdbcType="VARCHAR" />
+		<result column="rotExampleType" property="rotExampleType" jdbcType="VARCHAR" />
+		<result column="rotExampleChecked" property="rotExampleChecked" jdbcType="VARCHAR" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+		<result column="delYn" property="delYn" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<resultMap id="slCustomScriptResultMap" type= "kr.co.netpoint.vo.project.SlCustomScriptVO" >
+		<result column="projectId" property="projectId" jdbcType="INTEGER" />
+		<result column="customScriptId" property="customScriptId" jdbcType="INTEGER" />
+		<result column="customScriptGubun" property="customScriptGubun" jdbcType="VARCHAR" />
+		<result column="customScriptName" property="customScriptName" jdbcType="VARCHAR" />
+		<result column="customScriptContents" property="customScriptContents" jdbcType="VARCHAR" />
+		<result column="customScriptApplyQuestion" property="customScriptApplyQuestion" jdbcType="VARCHAR" />
+		<result column="codeId" property="codeId" jdbcType="VARCHAR" />
+		<result column="regDate" property="regDate" jdbcType="VARCHAR" />
+		<result column="delYn" property="delYn" jdbcType="VARCHAR" />
+	</resultMap >
+	
+	<sql id ="Start_MainTable" >
+		SET @RNUM:=0;
+		select
+			mainTable.*
+		from (
+	</sql>
+	<sql id ="End_MainTable" >
+		) mainTable
+	</sql>
+	<sql id ="Column_RNum" >
+		@RNUM := @RNUM + 1 AS rNum
+	</sql>
+	<sql id ="rNum_MainTable" >
+		<![CDATA[
+			where mainTable.rNum >= #{sRNum} AND mainTable.rNum <= #{eRNum}
+		]]>
+	</sql >
+	
+	<sql id ="Column_SlProject" >		
+		projectId
+		, projId
+		, projectNum
+		, businessId
+		, jobCode
+		, projectNameInner
+		, projectNameOuter
+		, surveyDisign
+		, customerCode
+		, pmCode
+		, usePc
+		, useMobile
+		, logoImgDirectory
+		, logoImgFullPath
+		, logoImgSaveName
+		, logoImgOriginalName
+		, useBack
+		, useResearBanner
+		, useResearList
+		, useLanguage
+		, useFollowing
+		, surveyUrl
+		, serveyTestUrl
+		, useTest
+		, projectState
+		, quater
+		, cpno
+		, regDate
+	</sql >
+	
+	<sql id ="Where_SlProject" >
+		<if test= "searchVO != null and searchVO.searchState.equalsIgnoreCase('Y')" >
+			<if test= "searchVO.projectState != null and !searchVO.projectState.equals('')" >
+				and projectState = #{searchVO.projectState} 
+			</if>			
+			<if test= "searchVO.searchType != null and !searchVO.searchType.equals('') and searchVO.searchValue != null and !searchVO.searchValue.equals('')" >
+				and binary(${searchVO.searchType}) like CONCAT('%',#{searchVO.searchValue},'%') 
+			</if>
+		</if>
+	</sql >
+	
+	<sql id ="Column_SlQuestionFunction" >		
+		projectId,
+		questionId,
+		functionId,
+		functionType,
+		functionText,
+		functionValue,
+		functionOrder,
+		regDate,
+		deleteYn
+	</sql >
+	
+	<sql id ="Column_SlQuestionLogic" >		
+		projectId,
+		questionId,
+		logicId,
+		logicType,
+		state,
+		questionNameBase,
+		exampleNameBase,
+		exampleValueBase,
+		questionNameTarget,
+		exampleNameTarget,
+		exampleValueTarget
+	</sql >
+	
+	<select id ="totalSlProject" resultType="int">
+		select
+			count(*)
+		from sl_project
+		<where>
+			<include refid ="Where_SlProject" />
+		</where>
+	</select>
+	
+	<select id ="listSlProject" resultMap="SlProjectResultMap">
+		<include refid ="Start_MainTable" />
+			select
+			<include refid ="Column_SlProject" /> 
+			, <include refid ="Column_RNum" /> 
+			from sl_project
+			<where>
+				<include refid ="Where_SlProject" />
+				<if test="projectNameInner != null and !projectNameInner.equals('')" >
+	        		and projectNameInner like CONCAT('%',#{projectNameInner},'%')
+				</if>
+			</where>
+			order by projectId desc
+		<include refid ="End_MainTable" />
+						
+		<if test= "sRNum != null and !sRNum.equals('') and eRNum != null and !eRNum.equals('')" >
+			<include refid ="rNum_MainTable" />
+		</if>
+	</select >
+	
+	<select id ="selectSlProject" resultMap="SlProjectResultMap">
+			select
+			<include refid ="Column_SlProject" /> 
+			from sl_project
+			<where>
+				<if test="projectId != null and projectId > 0" >
+	        		and projectId = #{projectId}
+				</if>
+			</where>
+	</select >
+	
+	
+	<insert id="insertProject" parameterType="kr.co.netpoint.vo.project.SlProjectVO">
+		insert into sl_project
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projId != null" >
+        		projId,
+      		</if>
+			<if test="projectNum != null" >
+        		projectNum,
+      		</if>
+			<if test="businessId != null" >
+        		businessId,
+      		</if>
+			<if test="jobCode != null" >
+        		jobCode,
+      		</if>
+			<if test="projectNameInner != null" >
+        		projectNameInner,
+      		</if>
+			<if test="projectNameOuter != null" >
+        		projectNameOuter,
+      		</if>
+			<if test="surveyDisign != null" >
+        		surveyDisign,
+      		</if>
+			<if test="customerCode != null" >
+        		customerCode,
+      		</if>
+			<if test="pmCode != null" >
+        		pmCode,
+      		</if>
+			<if test="usePc != null" >
+        		usePc,
+      		</if>
+			<if test="useMobile != null" >
+        		useMobile,
+      		</if>
+			<if test="logoImgDirectory != null" >
+        		logoImgDirectory,
+      		</if>
+			<if test="logoImgFullPath != null" >
+        		logoImgFullPath,
+      		</if>
+			<if test="logoImgSaveName != null" >
+        		logoImgSaveName,
+      		</if>
+			<if test="logoImgOriginalName != null" >
+        		logoImgOriginalName,
+      		</if>
+			<if test="useBack != null" >
+        		useBack,
+      		</if>
+			<if test="useResearBanner != null" >
+        		useResearBanner,
+      		</if>
+			<if test="useResearList != null" >
+        		useResearList,
+      		</if>
+			<if test="useLanguage != null" >
+        		useLanguage,
+      		</if>
+			<if test="useFollowing != null" >
+        		useFollowing,
+      		</if>
+			<if test="surveyUrl != null" >
+        		surveyUrl,
+      		</if>
+			<if test="serveyTestUrl != null" >
+        		serveyTestUrl,
+      		</if>
+			<if test="useTest != null" >
+        		useTest,
+      		</if>
+			<if test="projectState != null" >
+        		projectState,
+      		</if>
+			<if test="quater != null" >
+        		quater,
+      		</if>
+        		regDate,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projId != null" >
+        		#{projId},
+			</if>
+			<if test="projectNum != null" >
+        		#{projectNum},
+			</if>
+			<if test="businessId != null" >
+        		#{businessId},
+			</if>
+			<if test="jobCode != null" >
+        		#{jobCode},
+			</if>
+			<if test="projectNameInner != null" >
+        		#{projectNameInner},
+			</if>
+			<if test="projectNameOuter != null" >
+        		#{projectNameOuter},
+			</if>
+			<if test="surveyDisign != null" >
+        		#{surveyDisign},
+			</if>
+			<if test="customerCode != null" >
+        		#{customerCode},
+			</if>
+			<if test="pmCode != null" >
+        		#{pmCode},
+			</if>
+			<if test="usePc != null" >
+        		#{usePc},
+			</if>
+			<if test="useMobile != null" >
+        		#{useMobile},
+			</if>
+			<if test="logoImgDirectory != null" >
+        		#{logoImgDirectory},
+			</if>
+			<if test="logoImgFullPath != null" >
+        		#{logoImgFullPath},
+			</if>
+			<if test="logoImgSaveName != null" >
+        		#{logoImgSaveName},
+			</if>
+			<if test="logoImgOriginalName != null" >
+        		#{logoImgOriginalName},
+			</if>
+			<if test="useBack != null" >
+        		#{useBack},
+			</if>
+			<if test="useResearBanner != null" >
+        		#{useResearBanner},
+			</if>
+			<if test="useResearList != null" >
+        		#{useResearList},
+			</if>
+			<if test="useLanguage != null" >
+        		#{useLanguage},
+			</if>
+			<if test="useFollowing != null" >
+        		#{useFollowing},
+			</if>
+			<if test="surveyUrl != null" >
+        		#{surveyUrl},
+			</if>
+			<if test="serveyTestUrl != null" >
+        		#{serveyTestUrl},
+			</if>
+			<if test="useTest != null" >
+        		#{useTest},
+			</if>
+			<if test="projectState != null" >
+        		#{projectState},
+			</if>
+			<if test="quater != null" >
+        		#{quater},
+			</if>
+				sysdate(),
+		</trim>
+		<selectKey keyProperty="projectId" resultType="int" order="AFTER">
+	        SELECT LAST_INSERT_ID()
+	    </selectKey>
+	</insert>
+	
+	<update id="updateSlProject">
+	
+		update sl_project 
+			<trim prefix="set " suffixOverrides="," > 
+				<if test="projId != null" >
+	        		projId = #{projId},
+				</if>
+				<if test="projectNum != null" >
+	        		projectNum = #{projectNum},
+				</if>
+				<if test="businessId != null" >
+	        		businessId = #{businessId},
+				</if>
+				<if test="jobCode != null" >
+	        		jobCode = #{jobCode},
+				</if>
+				<if test="projectNameInner != null" >
+	        		projectNameInner = #{projectNameInner},
+				</if>
+				<if test="projectNameOuter != null" >
+	        		projectNameOuter = #{projectNameOuter},
+				</if>
+				<if test="surveyDisign != null" >
+	        		surveyDisign = #{surveyDisign},
+				</if>
+				<if test="customerCode != null" >
+	        		customerCode = #{customerCode},
+				</if>
+				<if test="pmCode != null" >
+	        		pmCode = #{pmCode},
+				</if>
+				<if test="usePc != null" >
+	        		usePc = #{usePc},
+				</if>
+				<if test="useMobile != null" >
+	        		useMobile = #{useMobile},
+				</if>
+				<if test="logoImgDirectory != null" >
+	        		logoImgDirectory = #{logoImgDirectory},
+				</if>
+				<if test="logoImgFullPath != null" >
+	        		logoImgFullPath = #{logoImgFullPath},
+				</if>
+				<if test="logoImgSaveName != null" >
+	        		logoImgSaveName = #{logoImgSaveName},
+				</if>
+				<if test="logoImgOriginalName != null" >
+	        		logoImgOriginalName = #{logoImgOriginalName},
+				</if>
+				<if test="useBack != null" >
+	        		useBack = #{useBack},
+				</if>
+				<if test="useResearBanner != null" >
+	        		useResearBanner = #{useResearBanner},
+				</if>
+				<if test="useResearList != null" >
+	        		useResearList = #{useResearList},
+				</if>
+				<if test="useLanguage != null" >
+	        		useLanguage = #{useLanguage},
+				</if>
+				<if test="useFollowing != null" >
+	        		useFollowing = #{useFollowing},
+				</if>
+				<if test="surveyUrl != null" >
+	        		surveyUrl = #{surveyUrl},
+				</if>
+				<if test="serveyTestUrl != null" >
+	        		serveyTestUrl = #{serveyTestUrl},
+				</if>
+				<if test="useTest != null" >
+	        		useTest = #{useTest},
+				</if>
+				<if test="projectState != null" >
+	        		projectState = #{projectState},
+				</if>
+				<if test="quater != null" >
+	        		quater = #{quater},
+				</if>
+				<if test="cpno != null" >
+	        		cpno = #{cpno},
+				</if>
+					regDate = sysdate(),
+			</trim>
+		where projectId = #{projectId}
+		
+	</update>
+	
+	<insert id="insertRedirectUrl">
+		insert into sl_redirectUrl
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="redirectType != null" >
+        		redirectType,
+      		</if>
+			<if test="redirectUrl != null" >
+        		redirectUrl,
+      		</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="redirectType != null" >
+        		#{redirectType},
+			</if>
+			<if test="redirectUrl != null" >
+        		#{redirectUrl},
+			</if>
+		</trim>
+	</insert>
+	
+	<insert id="updateRedirectUrl">
+	
+		update sl_redirectUrl 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="projectId != null" >
+        		projectId = #{projectId},
+      		</if>
+			<if test="redirectType != null" >
+        		redirectType = #{redirectType},
+      		</if>
+			<if test="redirectUrl != null" >
+        		redirectUrl = #{redirectUrl},
+      		</if>
+		
+		</trim>
+		where projectId = #{projectId}
+		
+	</insert>
+	
+	<delete id="deleteSlRedirectUrl">
+	
+		delete from sl_redirectUrl 
+		where projectId = #{projectId}
+		
+	</delete>
+	
+	<select id ="listSlRedirectUrl" resultMap="SlRedirectUrlResultMap">
+			select projectId, redirectType, redirectUrl
+			from sl_redirectUrl
+			where projectId = #{projectId}
+	</select >
+	
+	<select id="countSlHardCoding" resultType="int">
+		select 
+			count(hardCodingId)
+		from sl_hardCoding 
+		where projectId = #{projectId}
+	</select>
+	<select id="selectSlHardCoding" resultMap="SlHardCodingResultMap">
+		select 
+			hardCodingId, projectId, fileDirectory, fileFullPath, fileSaveName, fileOriginalName
+			, hardCodingTableName, questionSaveColumn, pageBaseHistory, pageLotationHistory, usePageHistory
+		from sl_hardCoding 
+		where projectId = #{projectId}
+	</select>
+	
+	<insert id="insertSlHardCoding">
+		insert into sl_hardCoding
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="fileDirectory != null" >
+        		fileDirectory,
+      		</if>
+			<if test="fileFullPath != null" >
+        		fileFullPath,
+      		</if>
+			<if test="fileSaveName != null" >
+        		fileSaveName,
+      		</if>
+			<if test="fileOriginalName != null" >
+        		fileOriginalName,
+      		</if>
+      		<if test="hardCodingTableName != null" >
+        		hardCodingTableName,
+      		</if>
+			<if test="pageBaseHistory != null" >
+        		pageBaseHistory,
+      		</if>
+			<if test="pageLotationHistory != null" >
+        		pageLotationHistory,
+      		</if>
+			<if test="usePageHistory != null" >
+        		usePageHistory,
+      		</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="fileDirectory != null" >
+        		#{fileDirectory},
+			</if>
+			<if test="fileFullPath != null" >
+        		#{fileFullPath},
+			</if>
+			<if test="fileSaveName != null" >
+        		#{fileSaveName},
+			</if>
+			<if test="fileOriginalName != null" >
+        		#{fileOriginalName},
+			</if>
+			<if test="hardCodingTableName != null" >
+        		#{hardCodingTableName},
+      		</if>
+			<if test="pageBaseHistory != null" >
+        		#{pageBaseHistory},
+			</if>
+			<if test="pageLotationHistory != null" >
+        		#{pageLotationHistory},
+			</if>
+			<if test="usePageHistory != null" >
+        		#{usePageHistory},
+			</if>
+		</trim>
+		<selectKey keyProperty="hardCodingId" resultType="int" order="AFTER">
+	        SELECT LAST_INSERT_ID()
+	    </selectKey>
+	</insert>
+	
+	<delete id="deleteSlHardCoding">
+		delete from sl_hardCoding where projectId = #{projectId}
+	</delete> 
+		
+	<update id="updateSlHardCoding">
+		update sl_hardCoding 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="fileDirectory != null" >
+        		fileDirectory = #{fileDirectory},
+      		</if>
+			<if test="fileFullPath != null" >
+        		fileFullPath = #{fileFullPath},
+      		</if>
+			<if test="fileSaveName != null" >
+        		fileSaveName = #{fileSaveName},
+      		</if>
+			<if test="fileOriginalName != null" >
+        		fileOriginalName = #{fileOriginalName},
+      		</if>
+			<if test="hardCodingTableName != null" >
+        		hardCodingTableName = #{hardCodingTableName},
+      		</if>
+			<if test="pageBaseHistory != null" >
+        		pageBaseHistory = #{pageBaseHistory},
+      		</if>
+			<if test="pageLotationHistory != null" >
+        		pageLotationHistory = #{pageLotationHistory},
+      		</if>
+			<if test="usePageHistory != null" >
+        		usePageHistory = #{usePageHistory},
+      		</if>
+			<if test="questionSaveColumn != null" >
+        		questionSaveColumn = #{questionSaveColumn},
+      		</if>
+		</trim>
+		where projectId = #{projectId}
+	</update>
+	
+	<insert id="insertSlQuestion">
+		insert into sl_question
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="hardCodingId != null" >
+        		hardCodingId,
+      		</if>
+			<if test="questionName != null" >
+        		questionName,
+      		</if>
+			<if test="questionTitle != null" >
+        		questionTitle,
+      		</if>
+			<if test="questionOption != null" >
+        		questionOption,
+      		</if>
+			<if test="questionType != null" >
+        		questionType,
+      		</if>
+			<if test="questionDivision != null" >
+        		questionDivision,
+      		</if>
+			<if test="questionLogic != null" >
+        		questionLogic,
+      		</if>
+			<if test="questionOrder != null" >
+        		questionOrder,
+      		</if>
+			<if test="checkNum != null" >
+        		checkNum,
+      		</if>
+      		regDate,
+      		deleteYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="hardCodingId != null" >
+        		#{hardCodingId},
+			</if>
+			<if test="questionName != null" >
+        		#{questionName},
+			</if>
+			<if test="questionTitle != null" >
+        		#{questionTitle},
+			</if>
+			<if test="questionOption != null" >
+        		#{questionOption},
+			</if>
+			<if test="questionType != null" >
+        		#{questionType},
+			</if>
+			<if test="questionDivision != null" >
+        		#{questionDivision},
+			</if>
+			<if test="questionLogic != null" >
+        		#{questionLogic},
+			</if>
+			<if test="questionOrder != null" >
+        		#{questionOrder},
+			</if>
+			<if test="checkNum != null" >
+        		#{checkNum},
+			</if>
+			sysdate(),
+			'N',
+		</trim>
+		
+		<selectKey keyProperty="questionId" resultType="int" order="AFTER">
+	        SELECT LAST_INSERT_ID()
+	    </selectKey>
+	</insert>
+	
+	<insert id="insertSlExample">
+		insert into sl_example
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="questionId != null" >
+        		questionId,
+      		</if>
+			<if test="exampleText != null" >
+        		exampleText,
+      		</if>
+			<if test="exampleValue != null" >
+        		exampleValue,
+      		</if>
+			<if test="exampleOrder != null" >
+        		exampleOrder,
+      		</if>
+      		regDate,
+      		deleteYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="questionId != null" >
+        		#{questionId},
+			</if>
+			<if test="exampleText != null" >
+        		#{exampleText},
+			</if>
+			<if test="exampleValue != null" >
+        		#{exampleValue},
+      		</if>
+			<if test="exampleOrder != null" >
+        		#{exampleOrder},
+			</if>
+			sysdate(),
+			'N',
+		</trim>
+	</insert>
+	
+	<insert id="insertSlQuestionFunction">
+		insert into sl_question_function
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="questionId != null" >
+        		questionId,
+      		</if>
+			<if test="functionType != null" >
+        		functionType,
+      		</if>
+			<if test="functionText != null" >
+        		functionText,
+      		</if>
+			<if test="functionValue != null" >
+        		functionValue,
+      		</if>
+      		regDate,
+      		deleteYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="questionId != null" >
+        		#{questionId},
+			</if>
+			<if test="functionType != null" >
+        		#{functionType},
+			</if>
+			<if test="functionText != null" >
+        		#{functionText},
+			</if>
+			<if test="functionValue != null" >
+        		#{functionValue},
+			</if>
+			sysdate(),
+			'N',
+		</trim>
+	</insert>
+	
+	<update id="updateSlExample">
+		update sl_example 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="exampleText != null and !exampleText.equals('')" >
+        		exampleText = #{exampleText},
+      		</if>
+			<if test="exampleValue != null and !exampleValue.equals('')" >
+        		exampleValue = #{exampleValue},
+      		</if>
+			<if test="exampleOrder != null and !exampleOrder.equals('')" >
+        		exampleOrder = #{exampleOrder},
+      		</if>
+			<if test="columnName != null and !columnName.equals('')" >
+        		columnName = #{columnName},
+      		</if>
+		</trim>
+		where exampleId = #{exampleId}
+	</update>
+	
+	<!-- <delete id="deleteSlQuestion">
+		update sl_question set deleteYn = 'Y' where projectId = #{projectId}
+	</delete> -->
+	<!-- <delete id="deleteSlExample">
+		update sl_example set deleteYn = 'Y' where projectId = #{projectId}
+	</delete> -->
+	<!-- <delete id="deleteSlQuestionFunction">
+		update sl_question_function set deleteYn = 'Y' where projectId = #{projectId}
+	</delete> -->
+	<delete id="deleteSlQuestion">
+		delete from sl_question where projectId = #{projectId}
+	</delete>
+	<delete id="deleteSlExample">
+		delete from sl_example where projectId = #{projectId}
+	</delete>
+	<delete id="deleteSlQuestionFunction">
+		delete from sl_question_function where projectId = #{projectId}
+	</delete>
+	<delete id="deleteSlQuestionLogic">
+		delete from sl_questionLogic where projectId = #{projectId}
+	</delete>
+	
+	<sql id ="Column_SlQuestion" >		
+		projectId,
+		hardCodingId,
+		questionId,
+		questionName,
+		questionHeader,
+		questionTitle,
+		questionFooter,
+		questionOption,
+		questionOrder,
+		questionType,
+		questionDivision,
+		questionLogic,
+		responseLimit,
+		checkNum,
+		regDate,
+		deleteYn
+	</sql >
+	
+	<select id ="selectSlQuestion" resultMap="SlQuestionResultMap">
+			select
+				<include refid ="Column_SlQuestion" /> 
+			from sl_question
+			<where>
+				<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+					and projectId = #{projectId} 
+				</if>			
+				<if test= "hardCodingId != null and !hardCodingId.equals('') and hardCodingId > 0" >
+					and hardCodingId = #{hardCodingId} 
+				</if>
+				<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+					and questionId = #{questionId} 
+				</if>
+				and deleteYn = 'N'
+			</where>
+			order by questionOrder
+	</select >
+	
+	<sql id ="Column_SlExample" >		
+		projectId,
+		questionId,
+		exampleId,
+		exampleText,
+		exampleLogicText,
+		exampleValue,
+		exampleOrder,
+		columnName,
+		regDate,
+		deleteYn
+	</sql >
+	
+	<select id ="selectSlExample" resultMap="SlExampleResultMap">
+			select
+				<include refid ="Column_SlExample" /> 
+			from sl_example
+			<where>
+				<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+					and projectId = #{projectId} 
+				</if>			
+				<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+					and questionId = #{questionId} 
+				</if>
+				<if test= "exampleId != null and !exampleId.equals('') and exampleId > 0" >
+					and exampleId = #{exampleId} 
+				</if>
+				<if test= "exampleValue != null and !exampleValue.equals('') and exampleValue > 0" >
+					and exampleValue = #{exampleValue} 
+				</if>
+				and deleteYn = 'N'
+			</where>
+	</select >
+	
+	<select id ="countSlExample" resultType="int">
+			select
+				count(exampleId)
+			from sl_example
+			<where>
+				<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+					and projectId = #{projectId} 
+				</if>			
+				<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+					and questionId = #{questionId} 
+				</if>
+				and deleteYn = 'N'
+			</where>
+	</select >
+		
+	<select id ="selectSlQuestionFunction" resultMap="SlQuestionFunctionResultMap">
+		select
+			<include refid ="Column_SlQuestionFunction" />
+		from sl_question_function
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId}
+			</if>
+			<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+				and questionId = #{questionId}
+			</if>
+			<if test= "functionId != null and !functionId.equals('') and functionId > 0" >
+				and functionId = #{functionId}
+			</if>
+			and deleteYn = 'N'
+		</where>
+	</select>
+	<select id ="selectSlQuestionLogic" resultMap="SlQuestionLogicResultMap">
+		select
+			<include refid ="Column_SlQuestionLogic" />
+		from sl_questionLogic
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId}
+			</if>
+			<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+				and questionId = #{questionId}
+			</if>
+			<if test= "logicId != null and !logicId.equals('') and logicId > 0" >
+				and logicId = #{logicId}
+			</if>
+		</where>
+	</select>
+	
+	<!-- <select id ="countSlSurvey" resultType="int">
+			select
+				count(questionId)
+			from ${tableName}
+			<where>
+				<if test= "uCode != null and !uCode.equals('') and uCode > 0" >
+					and uCode = #{uCode} 
+				</if>			
+				<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+					and projectId = #{projectId} 
+				</if>			
+				<if test= "hardCodingId != null and !hardCodingId.equals('') and hardCodingId > 0" >
+					and hardCodingId = #{hardCodingId} 
+				</if>
+				<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+					and questionId = #{questionId} 
+				</if>
+				<if test= "exampleId != null and !exampleId.equals('')" >
+					and exampleId = #{exampleId} 
+				</if>
+				and deleteYn = 'N'
+			</where>
+	</select >
+	
+	<insert id="insertSlSurvey">
+		insert into ${tableName}
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="uCode != null" >
+        		uCode,
+      		</if>
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="hardCodingId != null" >
+        		hardCodingId,
+      		</if>
+			<if test="questionId != null" >
+        		questionId,
+      		</if>
+			<if test="questionType != null" >
+        		questionType,
+      		</if>
+			<if test="questionName != null" >
+        		questionName,
+      		</if>
+			<if test="exampleId != null" >
+        		exampleId,
+      		</if>
+			<if test="exampleIndex != null" >
+        		exampleIndex,
+      		</if>
+			<if test="exampleText != null" >
+        		exampleText,
+      		</if>
+			<if test="exampleValue != null" >
+        		exampleValue,
+      		</if>
+      		regDate,
+      		deleteYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="uCode != null" >
+        		#{uCode},
+			</if>
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="hardCodingId != null" >
+        		#{hardCodingId},
+			</if>
+			<if test="questionId != null" >
+        		#{questionId},
+			</if>
+			<if test="questionType != null" >
+        		#{questionType},
+			</if>
+			<if test="questionName != null" >
+        		#{questionName},
+			</if>
+			<if test="exampleId != null" >
+        		#{exampleId},
+			</if>
+			<if test="exampleIndex != null" >
+        		#{exampleIndex},
+			</if>
+			<if test="exampleText != null" >
+        		#{exampleText},
+			</if>
+			<if test="exampleValue != null" >
+        		#{exampleValue},
+			</if>
+			sysdate(),
+			'N',
+		</trim>
+	</insert>
+	
+	<update id="updateSlSurvey">
+		update ${tableName}
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="questionType != null" >
+        		questionType = #{questionType},
+      		</if>
+			<if test="questionName != null" >
+        		questionName = #{questionName},
+      		</if>
+			<if test="exampleId != null" >
+        		exampleId = #{exampleId},
+      		</if>
+			<if test="exampleIndex != null" >
+        		exampleIndex = #{exampleIndex},
+      		</if>
+			<if test="exampleText != null" >
+        		exampleText = #{exampleText},
+      		</if>
+			<if test="exampleValue != null" >
+        		exampleValue = #{exampleValue},
+      		</if>
+      		regDate = sysdate(),
+		</trim>
+		where deleteYn = 'N'
+			and uCode = #{uCode}
+			and projectId = #{projectId}
+			and hardCodingId = #{hardCodingId} 
+			and questionId = #{questionId} 
+			<if test="exampleId != null and !exampleId.equals('') " >
+				and exampleId = #{exampleId}
+			</if>
+	</update> -->
+	
+	<select id ="countSlSurvey" resultType="int">
+		select
+			count(uCode)
+		from ${tableName}
+		<where>
+			<if test= "uCode != null and !uCode.equals('')" >
+				and uCode = #{uCode} 
+			</if>			
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId} 
+			</if>			
+			<if test= "hardCodingId != null and !hardCodingId.equals('') and hardCodingId > 0" >
+				and hardCodingId = #{hardCodingId} 
+			</if>
+			and deleteYn = 'N'
+		</where>
+	</select >
+	
+	<insert id="insertSlSurvey">
+		${sql}
+	</insert>
+	
+	<update id="updateSlSurvey">
+		${sql}
+	</update>
+	
+	<delete id="deleteSlSurvey">
+		delete from ${tableName}
+		<where>
+				and uCode = #{uCode} 
+				and projectId = #{projectId} 
+			<if test= "hardCodingId != null and !hardCodingId.equals('') and hardCodingId > 0" >
+				and hardCodingId = #{hardCodingId} 
+			</if>
+			<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+				and questionId = #{questionId} 
+			</if>
+			<if test= "exampleId != null and !exampleId.equals('') and exampleId > 0" >
+				and exampleId = #{exampleId} 
+			</if>
+		</where>
+	</delete>
+	
+	<select id="countTable" resultType="int">
+		SELECT EXISTS (
+			SELECT 1 
+			FROM Information_schema.tables 
+			WHERE table_schema = 'survey'
+			AND table_name = #{tableName} 
+		) AS flag
+	</select>
+	<select id="countTableColumn" parameterType="map" resultType="int" >
+		SELECT EXISTS (
+			SELECT 1 FROM Information_schema.columns
+			WHERE table_schema = 'survey' 
+			AND table_name = #{tablename} 
+			AND column_name = #{columnname} 
+		) AS flag
+	</select>
+	
+	<select id="createTable" resultType="HashMap">
+		${sql}
+	</select>
+	<select id="selectTable" resultType="HashMap">
+		${sql}
+	</select>
+	
+	<select id="listcolumnName" resultType="HashMap">
+		select column_name as colurmName
+		from information_schema.COLUMNS
+		where table_name = #{tableName} 
+	</select>
+	
+	<select id="countSlQuater" resultType="int">
+		select 
+			count(quaterId)
+		from sl_quater
+		where projectId = #{projectId} 
+	</select>
+	
+	<select id="selectSlQuater" resultMap="SlquaterResultMap">
+		select 
+			quaterId
+			, projectId
+			, quaterRowInfo
+			, quaterRowQueName
+			, quaterRowQueId
+			, quaterColInfo
+			, quaterColQueName
+			, quaterColQueId
+			, quaterType
+			, regDate
+		from sl_quater
+		where projectId = #{projectId} 
+	</select>
+	
+	<select id="selectSlQuaterCount" resultMap="SlQuaterCountResultMap">
+		select 
+			quaterCountId
+			, projectId
+			, quaterTotalCount 
+			, quaterActiveCount 
+			, quaterContent 
+			, quaterPosition 
+			, quaterOrder 
+			, regDate 
+		from sl_quaterCount 
+		where projectId = #{projectId}
+	</select>
+	
+	<select id="selectSlQuaterUser" resultMap="SlQuaterUserResultMap">
+		select 
+			quaterUserId
+			, projectId
+			, questionContent 
+			, quaterInOut 
+			, regDate 
+		from sl_quaterUser 
+		where projectId = #{projectId}
+	</select>
+	
+	<select id="selectSlQuaterQuestion" resultMap="SlQuestionFunctionResultMap">
+		select
+			<include refid ="Column_SlQuestionFunction" /> 
+		from sl_question_function
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId} 
+			</if>			
+			<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+				and questionId = #{questionId} 
+			</if>
+			<if test= "functionId != null and !functionId.equals('') and functionId > 0" >
+				and functionId = #{functionId} 
+			</if>
+			and functionText = 'quota'
+			and deleteYn = 'N'
+		</where>
+	</select>
+	
+	<insert id="insertSlQuater">
+		insert into sl_quater (projectId, quaterRowInfo, quaterRowQueName, quaterRowQueId, 
+							quaterColInfo, quaterColQueName, quaterColQueId, quaterType, regDate) 
+		values (#{projectId}, #{quaterRowInfo}, #{quaterRowQueName}, #{quaterRowQueId}, 
+							#{quaterColInfo}, #{quaterColQueName}, #{quaterColQueId}, #{quaterType}, sysdate())
+	</insert>
+	<update id="updateSlSlQuater">
+		update sl_quater 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="quaterRowInfo != null and !quaterRowInfo.equals('')" >
+        		quaterRowInfo = #{quaterRowInfo},
+      		</if>
+      		<if test="quaterRowQueName != null and !quaterRowQueName.equals('')" >
+        		quaterRowQueName = #{quaterRowQueName},
+      		</if>
+      		<if test="quaterRowQueId != null and !quaterRowQueId.equals('')" >
+        		quaterRowQueId = #{quaterRowQueId},
+      		</if>
+			<if test="quaterColInfo != null and !quaterColInfo.equals('')" >
+        		quaterColInfo = #{quaterColInfo},
+      		</if>
+      		<if test="quaterColQueName != null and !quaterColQueName.equals('')" >
+        		quaterColQueName = #{quaterColQueName},
+      		</if>
+      		<if test="quaterColQueId != null and !quaterColQueId.equals('')" >
+        		quaterColQueId = #{quaterColQueId},
+      		</if>
+		</trim>
+		where projectId = #{projectId}
+	</update>
+	
+	<insert id="insertSlQuaterCount">
+		insert into sl_quaterCount (projectId, quaterTotalCount, quaterActiveCount, quaterContent, quaterPosition, quaterOrder) 
+			values (#{projectId}, #{quaterTotalCount}, 0, #{quaterContent}, #{quaterPosition}, #{quaterOrder})
+	</insert>
+	<update id="updateSlQuaterCount">
+		update sl_quaterCount 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="quaterTotalCount != null and !quaterTotalCount.equals('') and quaterTotalCount > 0" >
+        		quaterTotalCount = #{quaterTotalCount},
+      		</if>
+			<if test="quaterActiveCount != null and !quaterActiveCount.equals('') and quaterActiveCount > 0" >
+        		quaterActiveCount = #{quaterActiveCount},
+      		</if>
+		</trim>
+		<where>
+			and projectId = #{projectId}
+		</where>
+	</update>
+	<update id="updateSlQuaterActiveCount">
+		update sl_quaterCount set quaterActiveCount = quaterActiveCount + 1      		
+		<where>
+				and projectId = #{projectId} 
+			<if test="quaterContent != null and !quaterContent.equals('')" >
+        		and quaterContent = #{quaterContent}
+      		</if>			
+		</where>
+	</update>
+	<insert id="insertSlQuaterUser">
+		insert into sl_quaterUser (projectId, questionContent, quaterInOut, regDate) 
+			values (#{projectId}, #{questionContent}, #{quaterInOut}, sysdate())
+	</insert>
+	<update id="updateSlQuaterUser">
+		update sl_quaterUser 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="questionContent != null and !questionContent.equals('')" >
+        		questionContent = #{questionContent},
+      		</if>
+			<if test="quaterInOut != null and !quaterInOut.equals('')" >
+        		quaterInOut = #{quaterInOut},
+      		</if>
+		</trim>
+		where projectId = #{projectId}
+	</update>
+	
+	<delete id="deleteSlQuater">
+		delete from sl_quater
+		where projectId = #{projectId}
+	</delete>
+	<delete id="deleteSlQuaterCount">
+		delete from sl_quaterCount
+		where projectId = #{projectId}
+	</delete>
+	<delete id="deleteSlQuaterUser">
+		delete from sl_quaterUser
+		where projectId = #{projectId}
+	</delete>
+	
+	<select id="selectMinSlQuestion" resultMap="SlQuestionResultMap">
+		select 
+			<include refid ="Column_SlQuestion" />
+		from (
+			select sq.*, min(sq.questionId) from sl_question sq
+			where sq.projectId = #{projectId}
+		) t
+	</select>
+	
+	<select id="selectSurveyCheckNum" resultType="String">
+		select 
+			checkNum
+		from ${tableName}
+		where projectId = #{projectId}
+	</select>
+	
+	<select id="selectSlBooster" resultMap="SlBoosterResultMap">
+		select 
+			boosterId, projectId, questionId, boosterInfo, boosterPosition, regDate
+		from sl_booster
+		where projectId = #{projectId}
+	</select>
+	
+	<insert id="insertSlBooster">
+		insert into sl_booster (projectId, questionId, boosterInfo, boosterPosition, regDate) 
+			values (#{projectId}, #{questionId}, #{boosterInfo}, #{boosterPosition}, sysdate())
+	</insert>
+	<update id="updateSlBooster">
+		update sl_booster 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="projectId != null and !projectId.equals('')" >
+        		projectId = #{projectId},
+      		</if>
+			<if test="questionId != null and !questionId.equals('')" >
+        		questionId = #{questionId},
+      		</if>
+			<if test="boosterInfo != null and !boosterInfo.equals('')" >
+        		boosterInfo = #{boosterInfo},
+      		</if>
+			<if test="boosterPosition != null and !boosterPosition.equals('')" >
+        		boosterPosition = #{boosterPosition},
+      		</if>
+      		regDate = sysdate()
+		</trim>
+		where projectId = #{projectId}
+	</update>
+	<delete id="deleteSlBooster">
+		delete from sl_booster
+		where projectId = #{projectId}
+	</delete>
+	
+		
+	<sql id="Where_SlQuestionViewPage">
+		where sl_questionViewPage.projectId = #{projectId}
+			and pageTitleQuestionId = #{pageTitleQuestionId} 
+			<if test="pageType != null and !pageType.equals('')" >
+        		and pageType = #{pageType}
+      		</if>
+	</sql>
+	<select id="countSlQuestionViewPage" resultType="int">
+		select 
+			count(vPageId)
+		from sl_questionViewPage
+		<include refid ="Where_SlQuestionViewPage" />
+	</select>
+	<select id="selectSlQuestionViewPage" resultMap="SlQuestionViewResultMap">
+		select 
+			vPageId, projectId
+			, pageTitleQuestionId, pageTitleQuestionName, pageTitleQuestionCheckNum, pageQuestionIds, pageQuestionNames, pageOrder
+			, regdate, pageType
+		from sl_questionViewPage
+		<include refid ="Where_SlQuestionViewPage" />
+	</select>
+	
+	<select id="listSlQuestionViewPage" resultMap="SlQuestionViewAllResultMap">
+		select 
+			vPageId, sl_questionViewPage.projectId, sl_questionViewPage.regdate
+			, pageTitleQuestionId, pageTitleQuestionName, pageTitleQuestionCheckNum, pageQuestionIds, pageQuestionNames, pageOrder
+			, sl_question.questionType, sl_code.codeValue as checkMoveQType
+		from sl_questionViewPage
+		join sl_question
+			on sl_questionViewPage.pageTitleQuestionId = sl_question.questionId	
+		join sl_code
+		on sl_question.questionType = sl_code.codeId
+		where codeType = 'checkMoveQType'
+			and sl_questionViewPage.projectId = #{projectId}
+		order by pageOrder asc
+	</select>
+	<insert id="insertSlQuestionViewPage">
+		insert into sl_questionViewPage (projectId, pageTitleQuestionId, pageTitleQuestionName, pageTitleQuestionCheckNum, pageQuestionIds, pageQuestionNames, pageOrder, pageType, regdate) 
+			values (#{projectId}, #{pageTitleQuestionId}, #{pageTitleQuestionName}, #{pageTitleQuestionCheckNum}, #{pageQuestionIds}, #{pageQuestionNames}, #{pageOrder}, #{pageType}, sysdate())
+	</insert>
+	<delete id="deleteSlQuestionViewPage">
+		delete from sl_questionViewPage
+		where projectId = #{projectId}
+			<if test="deleteType != null and deleteType.equals('rotation')" >
+        		and pageType = #{deleteType}
+	      		<if test= "pageTitleQuestionId != null and !pageTitleQuestionId.equals('') and pageTitleQuestionId > 0" >
+					and pageTitleQuestionId = #{pageTitleQuestionId} 
+				</if>
+      		</if>
+	</delete>
+	<update id="updateSlQuestionViewPage">
+		update sl_questionViewPage 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="pageQuestionIds != null and !pageQuestionIds.equals('')" >
+        		pageQuestionIds = CONCAT( IFNULL(sl_questionViewPage.pageQuestionIds,''), #{pageQuestionIds} ),
+      		</if>
+			<if test="pageQuestionNames != null and !pageQuestionNames.equals('')" >
+        		pageQuestionNames = CONCAT( IFNULL(sl_questionViewPage.pageQuestionNames,''), #{pageQuestionNames} ),
+      		</if>
+			<if test="pageOrder != null and !pageOrder.equals('') and pageOrder > 0" >
+        		pageOrder = #{pageOrder},
+      		</if>
+      		regDate = sysdate()
+		</trim>
+		where projectId = #{projectId}
+			and pageTitleQuestionId = #{pageTitleQuestionId}
+	</update>
+	
+	<insert id="insertSlRotationMain">
+		insert into sl_rotationMain (rotMainTitle, rotMainType, rotMainSetUser, projectId
+									, rotMainQuestionId, rotMainQuestionName, rotMainQuestionType, rotMMaxCount
+									, regDate, delYn) 
+		values (#{rotMainTitle}, #{rotMainType}, #{rotMainSetUser}, #{projectId}
+				, #{rotMainQuestionId}, #{rotMainQuestionName}, #{rotMainQuestionType}, #{rotMMaxCount}
+				, sysdate(), 'N')
+		<selectKey keyProperty="rotMainId" resultType="int" order="AFTER">
+	        SELECT LAST_INSERT_ID()
+	    </selectKey>
+	</insert>
+	
+	
+	<insert id="insertSlRotationPart">
+		insert into sl_rotationPart
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="rotMainId != null" >
+        		rotMainId,
+      		</if>
+			<if test="rotPartTitle != null" >
+        		rotPartTitle,
+      		</if>
+			<if test="rotPartOrder != null" >
+        		rotPartOrder,
+      		</if>
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+      		regDate,
+      		delYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="rotMainId != null" >
+        		#{rotMainId},
+			</if>
+			<if test="rotPartTitle != null" >
+        		#{rotPartTitle},
+			</if>
+			<if test="rotPartOrder != null" >
+        		#{rotPartOrder},
+			</if>
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			sysdate(),
+			'N',
+		</trim>
+		<selectKey keyProperty="rotPartId" resultType="int" order="AFTER">
+	        SELECT LAST_INSERT_ID()
+	    </selectKey>
+	</insert>
+	
+	
+	<insert id="insertSlRotationQuestion">
+		insert into sl_rotationQuestion
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="rotPartId != null" >
+        		rotPartId,
+      		</if>
+			<if test="rotTitle != null" >
+        		rotTitle,
+      		</if>
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="rotQuestionId != null" >
+        		rotQuestionId,
+      		</if>
+			<if test="rotQuestionName != null" >
+        		rotQuestionName,
+      		</if>
+			<if test="rotQuestionType != null" >
+        		rotQuestionType,
+      		</if>
+			<if test="rotSaveFileName != null" >
+        		rotSaveFileName,
+      		</if>
+			<if test="rotQuestionCheckNum != null" >
+        		rotQuestionCheckNum,
+      		</if>
+      		regDate,
+      		delYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="rotPartId != null" >
+        		#{rotPartId},
+			</if>
+			<if test="rotTitle != null" >
+        		#{rotTitle},
+			</if>
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="rotQuestionId != null" >
+        		#{rotQuestionId},
+			</if>
+			<if test="rotQuestionName != null" >
+        		#{rotQuestionName},
+			</if>
+			<if test="rotQuestionType != null" >
+        		#{rotQuestionType},
+			</if>
+			<if test="rotSaveFileName != null" >
+        		#{rotSaveFileName},
+			</if>
+			<if test="rotQuestionCheckNum != null" >
+        		#{rotQuestionCheckNum},
+			</if>
+			sysdate(),
+			'N',
+		</trim>
+		<selectKey keyProperty="projectId" resultType="int" order="AFTER">
+	        SELECT LAST_INSERT_ID()
+	    </selectKey>
+	</insert>
+	
+	
+	<insert id="insertSlRotationExample">
+		insert into sl_rotationExample
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="rotMainId != null" >
+        		rotMainId,
+      		</if>
+			<if test="rotTitle != null" >
+        		rotTitle,
+      		</if>
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="rotExampleId != null" >
+        		rotExampleId,
+      		</if>
+			<if test="rotExampleValue != null" >
+        		rotExampleValue,
+      		</if>
+			<if test="rotExampleText != null" >
+        		rotExampleText,
+      		</if>
+			<if test="rotExampleType != null" >
+        		rotExampleType,
+      		</if>
+			<if test="rotExampleChecked != null" >
+        		rotExampleChecked,
+      		</if>
+      		regDate,
+      		delYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="rotMainId != null" >
+        		#{rotMainId},
+			</if>
+			<if test="rotTitle != null" >
+        		#{rotTitle},
+			</if>
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="rotExampleId != null" >
+        		#{rotExampleId},
+			</if>
+			<if test="rotExampleValue != null" >
+        		#{rotExampleValue},
+			</if>
+			<if test="rotExampleText != null" >
+        		#{rotExampleText},
+			</if>
+			<if test="rotExampleType != null" >
+        		#{rotExampleType},
+			</if>
+			<if test="rotExampleChecked != null" >
+        		#{rotExampleChecked},
+			</if>
+			sysdate(),
+			'N',
+		</trim>
+	</insert>
+	
+	<select id="selectSlRotationMain" resultMap="slRotationMainResultMap">
+		select
+			rotMainId
+			, rotMainTitle
+			, rotMainType
+			, rotMainSetUser
+			, projectId
+			, rotMainQuestionId
+			, rotMainQuestionName
+			, rotMainQuestionType
+			, rotMainQuestionCheckNum
+			, rotQuestionNames
+			, rotFinalQuestionName
+			, exitQuestionName
+			, rotMMaxCount
+			, regDate
+			, delYn
+		from sl_rotationMain
+		<where>
+			and projectId = #{projectId} 
+			<if test= "rotMainId != null and !rotMainId.equals('') and rotMainId > 0" >
+				and rotMainId = #{rotMainId} 
+			</if>
+			<if test= "rotMainType != null and !rotMainType.equals('')" >
+				and rotMainType = #{rotMainType} 
+			</if>
+			<if test= "rotMainQuestionId != null and !rotMainQuestionId.equals('') and rotMainQuestionId > 0" >
+				and rotMainQuestionId = #{rotMainQuestionId} 
+			</if>
+			<if test= "rotMainQuestionName != null and !rotMainQuestionName.equals('')" >
+				and rotQuestionNames like CONCAT('%',#{rotMainQuestionName},'%')
+			</if>
+		</where>
+	</select>
+	
+	<select id="selectSlRotationPart" resultMap="slRotationPartResultMap">
+		select
+			rotPartId
+			, rotMainId
+			, rotPartTitle
+			, rotPartOrder
+			, projectId
+			, regDate
+			, delYn
+		from sl_rotationPart
+		<where>
+			and projectId = #{projectId} 
+			<if test= "rotMainId != null and !rotMainId.equals('') and rotMainId > 0" >
+				and rotMainId = #{rotMainId} 
+			</if>
+		</where>
+	</select>
+	
+	<select id="selectSlRotationQuestion" resultMap="slRotationQuestionResultMap">
+		select
+			rotId
+			, rotPartId
+			, rotTitle
+			, projectId
+			, rotQuestionId
+			, rotQuestionName
+			, rotQuestionType
+			, rotSaveFileName
+			, rotQuestionCheckNum
+			, regDate
+			, delYn
+		from sl_rotationQuestion
+		<where>
+			and projectId = #{projectId} 
+			<if test= "rotPartId != null and !rotPartId.equals('') and rotPartId > 0" >
+				and rotPartId = #{rotPartId} 
+			</if>
+			<if test= "rotId != null and !rotId.equals('') and rotId > 0" >
+				and rotId = #{rotId} 
+			</if>
+		</where>
+	</select>
+	
+	<select id="selectSlRotationExample" resultMap="slRotationExampleResultMap">
+		select
+			rotId
+			, rotMainId
+			, rotTitle
+			, projectId
+			, rotExampleId
+			, rotExampleValue
+			, rotExampleText
+			, rotExampleType
+			, rotExampleChecked
+			, regDate
+			, delYn
+		from sl_rotationExample
+		<where>
+			and projectId = #{projectId} 
+			<if test= "rotMainId != null and !rotMainId.equals('') and rotMainId > 0" >
+				and rotMainId = #{rotMainId} 
+			</if>
+		</where>
+	</select>
+	
+	<update id="updateSlRotationMain">
+		update sl_rotationMain 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test= "rotFinalQuestionName != null and !rotFinalQuestionName.equals('')" >
+        		rotFinalQuestionName = #{rotFinalQuestionName},
+      		</if>
+			<if test= "exitQuestionName != null and !exitQuestionName.equals('')" >
+        		exitQuestionName = #{exitQuestionName},
+      		</if>
+      		<if test= "rotQuestionNames != null and !rotQuestionNames.equals('')" >
+        		rotQuestionNames = #{rotQuestionNames},
+      		</if>
+		</trim>
+		where projectId = #{projectId}
+			and rotMainId = #{rotMainId}
+	</update>
+	
+	<update id="updateSlRotationPart">
+		update sl_rotationPart 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test= "rotMainId != null and !rotMainId.equals('')" >
+        		rotMainId = #{rotMainId},
+      		</if>
+			<if test="rotPartOrder != null and !rotPartOrder.equals('')" >
+        		rotPartOrder = #{rotPartOrder},
+      		</if>
+      		regDate = sysdate()
+		</trim>
+		where projectId = #{projectId}
+			and rotPartId = #{rotPartId}
+	</update>
+	<update id="updateSlRotationQuestion">
+		update sl_rotationQuestion set
+        	rotPartId = 0,
+      		regDate = sysdate()
+		where projectId = #{projectId}
+			and rotPartId = #{rotPartId}
+	</update>
+	
+	<delete id="deleteSlRotationMain">
+		delete from sl_rotationMain
+		where projectId = #{projectId} and rotMainId = #{rotMainId} 
+	</delete>
+	<delete id="deleteSlRotationPart">
+		delete from sl_rotationPart
+		where projectId = #{projectId} 
+		<if test= "rotMainId != null and !rotMainId.equals('') and rotMainId > 0" >
+       		and rotMainId = #{rotMainId}
+     	</if>
+		<if test= "rotPartId != null and !rotPartId.equals('') and rotPartId > 0" >
+       		and rotPartId = #{rotPartId}
+     	</if>
+	</delete>
+	<delete id="deleteSlRotationQuestion">
+		delete from sl_rotationQuestion
+		where projectId = #{projectId} and rotPartId = #{rotPartId}
+			<if test= "rotId != null and !rotId.equals('') and rotId > 0" >
+	       		and rotId = #{rotId}
+	     	</if>
+	</delete>
+	<delete id="deleteSlRotationExample">
+		delete from sl_rotationExample
+		where projectId = #{projectId} and rotMainId = #{rotMainId} 
+	</delete>
+	
+	<select id="countSlRotationMain" resultType="int">
+		select
+			count(rotMainQuestionId)
+		from sl_rotationMain
+		where projectId = #{projectId}
+			<if test= "rotMainQuestionId != null and !rotMainQuestionId.equals('') and rotMainQuestionId > 0" >
+			and rotMainQuestionId = #{rotMainQuestionId}
+			</if>
+	</select>
+	<select id="countSlRotationQuestion" resultType="int">
+		select
+			count(rotQuestionId)
+		from sl_rotationQuestion
+		where projectId = #{projectId}
+			and rotQuestionId = #{rotQuestionId}
+	</select>
+	<select id="countSlCustomScript" resultType="int">
+		select
+			count(customScriptId)
+		from sl_customScript
+		where projectId = #{projectId}
+	</select>
+	<select id="selectSlCustomScript" resultMap="slCustomScriptResultMap">
+		select
+			projectId, customScriptId, customScriptName, customScriptGubun, customScriptApplyCount, customScriptApplyQuestion, customScriptContents, codeId, regDate, deleteYn
+		from sl_customScript
+		where projectId = #{projectId}
+		order by customScriptId
+	</select>
+	
+	<select id="selectCustomScriptContents" resultMap="slCustomScriptResultMap">
+		select
+			projectId, customScriptId, customScriptName, customScriptGubun, customScriptApplyCount, customScriptApplyQuestion, customScriptContents, codeId, regDate, deleteYn
+		from sl_customScript
+		where projectId = #{projectId} and customScriptId = #{customScriptId}
+	</select>
+	
+	<update id="deleteCustomScript">
+		update sl_customScript set 
+			deleteYn = 'Y' 
+		<where>
+			<if test="projectId != null and projectId > 0" >
+				and projectId = #{projectId}
+			</if>
+			<if test="customScriptId != null and customScriptId > 0" >
+				and customScriptId = #{customScriptId}
+			</if>
+		</where>
+	</update>
+	<insert id="insertCustomScript">
+		insert into sl_customScript
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="customScriptName != null" >
+        		customScriptName,
+      		</if>
+			<if test="customScriptGubun != null" >
+        		customScriptGubun,
+      		</if>
+			<if test="customScriptApplyCount != null" >
+        		customScriptApplyCount,
+      		</if>
+			<if test="customScriptApplyQuestion != null" >
+        		customScriptApplyQuestion,
+      		</if>
+			<if test="customScriptContents != null" >
+        		customScriptContents,
+      		</if>
+			<!-- <if test="codeId != null" >
+        		codeId,
+      		</if> -->
+        		regDate,
+        		deleteYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="customScriptName != null" >
+        		#{customScriptName},
+			</if>
+			<if test="customScriptGubun != null" >
+        		#{customScriptGubun},
+			</if>
+			<if test="customScriptApplyCount != null" >
+        		#{customScriptApplyCount},
+			</if>
+			<if test="customScriptApplyQuestion != null" >
+        		#{customScriptApplyQuestion},
+			</if>
+			<if test="customScriptContents != null" >
+        		#{customScriptContents},
+			</if>
+			<!-- <if test="codeId != null" >
+        		#{codeId},
+			</if> -->
+				sysdate(),
+				'N',
+		</trim>
+	</insert>
+		
+	<update id="webUpdateSlQuestion">	
+		update sl_question
+			<trim prefix="set " suffixOverrides="," > 
+				<if test="questionName != null" >
+	        		questionName = #{questionName},
+				</if>
+				<if test="questionHeader != null" >
+	        		questionHeader = #{questionHeader},
+				</if>
+				<if test="questionTitle != null" >
+	        		questionTitle = #{questionTitle},
+				</if>
+				<if test="questionFooter != null" >
+	        		questionFooter = #{questionFooter},
+				</if>
+				<if test="questionOption != null" >
+	        		questionOption = #{questionOption},
+				</if>
+				<if test="questionOrder != null" >
+	        		questionOption = #{questionOrder},
+				</if>
+				<if test="responseLimit != null" >
+	        		responseLimit = #{responseLimit},
+				</if>
+					regDate = sysdate(),
+			</trim>
+		where projectId = #{projectId} and questionId = #{questionId}		
+	</update>	
+	
+	<delete id="webDeleteSlExample">	
+		delete from sl_example 
+		where projectId = #{projectId} and questionId = #{questionId}		
+	</delete>
+	
+	<insert id="webInsertSlExample">
+		insert into sl_example
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="questionId != null" >
+        		questionId,
+      		</if>
+			<if test="exampleText != null" >
+        		exampleText,
+      		</if>
+      		<if test="exampleLogicText != null" >
+        		exampleLogicText,
+      		</if>
+			<if test="exampleValue != null" >
+        		exampleValue,
+      		</if>
+			<if test="exampleOrder != null" >
+        		exampleOrder,
+      		</if>
+      		<if test="columnName != null" >
+        		columnName,
+      		</if>
+      		regDate,
+      		deleteYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="questionId != null" >
+        		#{questionId},
+			</if>
+			<if test="exampleText != null" >
+        		#{exampleText},
+			</if>
+			<if test="exampleLogicText != null" >
+        		#{exampleLogicText},
+			</if>
+			<if test="exampleValue != null" >
+        		#{exampleValue},
+      		</if>
+			<if test="exampleOrder != null" >
+        		#{exampleOrder},
+			</if>
+			<if test="columnName != null" >
+        		#{columnName},
+      		</if>
+			sysdate(),
+			'N',
+		</trim>
+	</insert>
+	
+	<delete id="webDeleteSlQuestionFunction">
+		delete from sl_question_function 
+		where projectId = #{projectId} and questionId = #{questionId}
+	</delete>
+
+	<insert id="webInsertSlQuestionFunction">
+		insert into sl_question_function
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="questionId != null" >
+        		questionId,
+      		</if>
+			<if test="functionType != null" >
+        		functionType,
+      		</if>
+			<if test="functionText != null" >
+        		functionText,
+      		</if>
+      		regDate,
+      		deleteYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="questionId != null" >
+        		#{questionId},
+			</if>
+			<if test="functionType != null" >
+        		#{functionType},
+			</if>
+			<if test="functionText != null" >
+        		#{functionText},
+      		</if>			
+			sysdate(),
+			'N',
+		</trim>
+	</insert>
+	
+	<select id="webCountSlBooster" resultType="int">
+		select
+			count(boosterId)
+		from sl_booster
+		where projectId = #{projectId} and questionId = #{questionId}
+	</select>
+	
+	<select id="webCountSlQuoter" resultType="int">
+		select
+			count(quaterId)
+		from sl_quater
+		where projectId = #{projectId} and 
+		(quaterRowQueId like CONCAT('%',#{questionId},'%') or quaterColQueId like CONCAT('%',#{questionId},'%'))
+	</select>
+	
+	<select id="webCountSlRotationMain" resultType="int">
+		select
+			count(rotMainId)
+		from sl_rotationMain
+		where projectId = #{projectId} and rotMainQuestionId = #{questionId}		
+	</select>
+	
+	<select id="webCountSlRotationQuestion" resultType="int">
+		select
+			count(rotId)
+		from sl_rotationQuestion
+		where projectId = #{projectId} and rotQuestionId = #{questionId}		
+	</select>
+	
+	<select id="webCountSlCustomScript" resultType="int">
+		select
+			count(customScriptId)
+		from sl_customScript
+		where projectId = #{projectId} and customScriptName like CONCAT('%',#{questionName},'%') and deleteYn = 'N'		
+	</select>
+	
+	<delete id="webDeleteSlQuestionLogic">
+		delete from sl_questionLogic
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId} 
+			</if>
+			<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+				and questionId = #{questionId} 
+			</if>
+		</where>
+	</delete>
+	
+	<delete id="webDeleteSlQuestion">
+		delete from sl_question 
+		where projectId = #{projectId} and questionId = #{questionId}
+	</delete>
+	
+	<delete id="webDeleteSlQuestionViewPage">
+		delete from sl_questionViewPage 
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId}
+			</if>
+			<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+				and pageTitleQuestionId = #{questionId}
+			</if>
+		</where>
+	</delete>
+
+	<select id="webListSlQuestion" resultMap="SlQuestionResultMap">
+		select
+			<include refid ="Column_SlQuestion" /> 
+		from sl_question
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId} 
+			</if>
+			and deleteYn = 'N'
+		</where>
+		order by questionOrder
+	</select>
+	
+	<update id="webUpdateSlQuestionOrder">
+		update sl_question
+			<trim prefix="set " suffixOverrides="," >
+				<if test="questionOrder != null and questionOrder > 0" >
+	        		questionOrder = #{questionOrder},
+				</if>
+	      		regDate = sysdate(),
+      		</trim>
+		where projectId = #{projectId} and questionId = #{questionId}
+	</update>
+	
+	<select id="webListSlQuestionViewPage" resultMap="SlQuestionViewResultMap">
+		select 
+			vPageId, projectId
+			, pageTitleQuestionId, pageTitleQuestionName, pageTitleQuestionCheckNum, pageQuestionIds, pageQuestionNames, pageOrder
+			, regdate, pageType
+		from sl_questionViewPage
+		where projectId = #{projectId}
+		order by pageOrder
+	</select>
+			
+	<update id="webUpdateSlQuestionViewPage">
+		update sl_questionViewPage 
+			<trim prefix="set " suffixOverrides="," >
+				<if test="pageTitleQuestionName != null and !pageTitleQuestionName.equals('')" >
+	        		pageTitleQuestionName = #{pageTitleQuestionName},
+				</if>
+				<if test="pageQuestionNames != null and !pageQuestionNames.equals('')" >
+	        		pageQuestionNames = #{pageQuestionNames},
+				</if>
+				<if test="pageOrder != null and pageOrder > 0" >
+	        		pageOrder = #{pageOrder},
+				</if>
+	      		regDate = sysdate(),
+      		</trim>
+		where projectId = #{projectId} and pageTitleQuestionId = #{pageTitleQuestionId}
+	</update>
+	
+	<select id="countSlQuestion" resultType="int">
+		select 
+			count(questionId)
+		from sl_question 
+		where projectId = #{projectId}
+	</select>
+	
+	<select id ="selectQuestionOrder" resultType="int">
+		SELECT questionOrder
+		FROM sl_question
+		WHERE projectId = #{projectId}
+		ORDER BY questionOrder DESC
+		LIMIT 1;
+	</select>
+	
+	<insert id="webInsertSlQuestion">
+		insert into sl_question
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="hardCodingId != null" >
+        		hardCodingId,
+      		</if>
+			<if test="questionName != null" >
+        		questionName,
+      		</if>
+			<if test="questionTitle != null" >
+        		questionTitle,
+      		</if>
+			<if test="questionOption != null" >
+        		questionOption,
+      		</if>
+			<if test="questionType != null" >
+        		questionType,
+      		</if>
+			<if test="questionDivision != null" >
+        		questionDivision,
+      		</if>
+			<if test="questionLogic != null" >
+        		questionLogic,
+      		</if>
+			<if test="questionOrder != null" >
+        		questionOrder,
+      		</if>
+			<if test="checkNum != null" >
+        		checkNum,
+      		</if>
+      		regDate,
+      		deleteYn,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="hardCodingId != null" >
+        		#{hardCodingId},
+			</if>
+			<if test="questionName != null" >
+        		#{questionName},
+			</if>
+			<if test="questionTitle != null" >
+        		#{questionTitle},
+			</if>
+			<if test="questionOption != null" >
+        		#{questionOption},
+			</if>
+			<if test="questionType != null" >
+        		#{questionType},
+			</if>
+			<if test="questionDivision != null" >
+        		#{questionDivision},
+			</if>
+			<if test="questionLogic != null" >
+        		#{questionLogic},
+			</if>
+			<if test="questionOrder != null" >
+        		#{questionOrder},
+			</if>
+			<if test="checkNum != null" >
+        		#{checkNum},
+			</if>
+			sysdate(),
+			'N',
+		</trim>
+		
+		<selectKey keyProperty="questionId" resultType="int" order="AFTER">
+	        SELECT LAST_INSERT_ID()
+	    </selectKey>
+	</insert>
+	
+	<insert id="webInsertSlQuestionViewPage">
+		insert into sl_questionViewPage
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="pageTitleQuestionId != null" >
+        		pageTitleQuestionId,
+      		</if>
+			<if test="pageTitleQuestionName != null" >
+        		pageTitleQuestionName,
+      		</if>
+			<if test="pageTitleQuestionCheckNum != null" >
+        		pageTitleQuestionCheckNum,
+      		</if>
+			<if test="pageQuestionIds != null" >
+        		pageQuestionIds,
+      		</if>
+			<if test="pageQuestionNames != null" >
+        		pageQuestionNames,
+      		</if>
+			<if test="pageOrder != null" >
+        		pageOrder,
+      		</if>
+      		regDate,
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="pageTitleQuestionId != null" >
+        		#{pageTitleQuestionId},
+			</if>
+			<if test="pageTitleQuestionName != null" >
+        		#{pageTitleQuestionName},
+			</if>
+			<if test="pageTitleQuestionCheckNum != null" >
+        		#{pageTitleQuestionCheckNum},
+			</if>
+			<if test="pageQuestionIds != null" >
+        		#{pageQuestionIds},
+			</if>
+			<if test="pageQuestionNames != null" >
+        		#{pageQuestionNames},
+			</if>
+			<if test="pageOrder != null" >
+        		#{pageOrder},
+			</if>
+			sysdate(),
+		</trim>
+	</insert>
+	
+	<insert id="webInsertSlQuestionLogic">
+		insert into sl_questionLogic
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		projectId,
+      		</if>
+			<if test="questionId != null" >
+        		questionId,
+      		</if>
+			<if test="logicType != null" >
+        		logicType,
+      		</if>
+			<if test="state != null" >
+        		state,
+      		</if>
+			<if test="questionNameBase != null" >
+        		questionNameBase,
+      		</if>
+			<if test="exampleNameBase != null" >
+        		exampleNameBase,
+      		</if>
+			<if test="exampleValueBase != null" >
+        		exampleValueBase,
+      		</if>
+      		<if test="questionNameTarget != null" >
+        		questionNameTarget,
+      		</if>
+      		<if test="exampleNameTarget != null" >
+        		exampleNameTarget,
+      		</if>
+      		<if test="exampleValueTarget != null" >
+        		exampleNameTarget,
+      		</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="projectId != null" >
+        		#{projectId},
+			</if>
+			<if test="questionId != null" >
+        		#{questionId},
+			</if>
+			<if test="logicType != null" >
+        		#{logicType},
+			</if>
+			<if test="state != null" >
+        		#{state},
+			</if>
+			<if test="questionNameBase != null" >
+        		#{questionNameBase},
+			</if>
+			<if test="exampleNameBase != null" >
+        		#{exampleNameBase},
+			</if>
+			<if test="exampleValueBase != null" >
+        		#{exampleValueBase},
+			</if>
+			<if test="questionNameTarget != null" >
+        		#{questionNameTarget},
+			</if>
+			<if test="exampleNameTarget != null" >
+        		#{exampleNameTarget},
+			</if>
+			<if test="exampleValueTarget != null" >
+        		#{exampleValueTarget},
+			</if>
+		</trim>
+	</insert>
+	
+	<!-- 전체 문항 복사 -->
+	<!-- 문항 -->
+	<update id="insertCopySlQuestion">
+		insert into sl_question (projectId, hardCodingId, questionName, questionHeader, questionTitle, questionFooter, questionOption, questionType, questionDivision, questionLogic, questionOrder, responseLimit, regDate, checkNum, viewType, deleteYn, pageType)
+		select #{projectId} as projectId, #{hardCodingId} as hardCodingId, questionName, questionHeader, questionTitle, questionFooter, questionOption, questionType, questionDivision, questionLogic, questionOrder, responseLimit, regDate, (SELECT CAST(RAND() * 1000 AS SIGNED) + 1) as checkNum, viewType, deleteYn, pageType
+		from sl_question
+		<where>
+			<if test= "copyTagetProjectId != null and !copyTagetProjectId.equals('') and copyTagetProjectId > 0" >
+				and projectId = #{copyTagetProjectId}
+			</if>
+		</where>
+	</update>
+	<!-- 사용자 스크립트 -->
+	<update id="insertCopySlCustomScript">
+		insert into sl_customScript (projectId, customScriptName, customScriptGubun, customScriptApplyCount, customScriptApplyQuestion, customScriptContents, codeId, regDate, deleteYn)
+		select #{projectId} as projectId, customScriptName, customScriptGubun, customScriptApplyCount, customScriptApplyQuestion, customScriptContents, codeId, regDate, deleteYn
+		from sl_customScript
+		where projectId = #{copyTagetProjectId}
+	</update>
+	<!-- 보기 -->
+	<update id="insertCopySlExample">
+		insert into sl_example (questionId, projectId, exampleText, exampleLogicText, exampleValue, exampleOrder, columnName, regDate, deleteYn, pageType)
+		select #{questionId} as questionId, #{projectId} as projectId, exampleText, exampleLogicText, exampleValue, exampleOrder, columnName, regDate, deleteYn, pageType
+		from sl_example
+		where questionId = #{copyTagetQuestionId}
+	</update>
+	<!-- 문항 로직-->
+	<update id="insertCopySlQuestionLogic">
+		insert into sl_questionLogic (projectId, questionId, logicType, state, questionNameBase, exampleNameBase, exampleValueBase, questionNameTarget, exampleNameTarget, exampleValueTarget)
+		select #{projectId} as projectId, #{questionId} as questionId, logicType, state, questionNameBase, exampleNameBase, exampleValueBase, questionNameTarget, exampleNameTarget, exampleValueTarget
+		from sl_questionLogic
+		where questionId = #{copyTagetQuestionId}
+	</update>
+	<!-- 문항 기능-->
+	<update id="insertCopySlQuestionFunction">
+		insert into sl_question_function (questionId, projectId, functionType, functionText, functionValue, functionOrder, regDate, deleteYn)
+		select #{questionId} as questionId, #{projectId} as projectId, functionType, functionText, functionValue, functionOrder, regDate, deleteYn
+		from sl_question_function
+		where questionId = #{copyTagetQuestionId} and not functionText="quota"
+	</update>
+	<!-- 문항 순서-->
+	<update id="insertCopySlQuestionViewPage">
+		insert into sl_questionViewPage (projectId, pageTitleQuestionId, pageTitleQuestionName, pageTitleQuestionCheckNum, pageQuestionIds, pageQuestionNames, pageOrder, regdate, pageType)
+		select #{projectId} as projectId, #{questionId} as pageTitleQuestionId, pageTitleQuestionName, #{checkNum} as pageTitleQuestionCheckNum, CONCAT('>',#{questionId}) pageQuestionIds, pageQuestionNames, pageOrder, regdate, pageType
+		from sl_questionViewPage
+		where pageTitleQuestionId = #{copyTagetQuestionId}
+	</update>
+	
+	<!-- 선택 문항 복사 -->
+	<!-- 문항 삽입 -->
+	<update id="insertPartcopySlQuestion">
+		insert into sl_question (projectId, hardCodingId, questionName, questionHeader, questionTitle, questionFooter, questionOption, questionType, questionDivision, questionLogic, questionOrder, responseLimit, regDate, checkNum, viewType, deleteYn, pageType)
+		select projectId, hardCodingId, CONCAT('copy_',#{copyTagetQuestionName}) as questionName, questionHeader, questionTitle, questionFooter, questionOption, questionType, questionDivision, questionLogic, #{insertQuestionOrder}, responseLimit, regDate, (SELECT CAST(RAND() * 1000 AS SIGNED) + 1) as checkNum, viewType, deleteYn, pageType
+		from sl_question
+		<where>
+			<if test= "copyTagetProjectId != null and !copyTagetProjectId.equals('') and copyTagetProjectId > 0" >
+				and projectId = #{copyTagetProjectId}
+			</if>
+			<if test= "copyTagetQuestionId != null and !copyTagetQuestionId.equals('') and copyTagetQuestionId > 0" >
+				and questionId = #{copyTagetQuestionId}
+			</if>
+		</where>
+	</update>
+	<!-- 문항순서 조회 1 -->
+	<select id ="webQuestionOrder" resultType="int">
+		SELECT questionOrder
+		FROM sl_question
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId}
+			</if>
+			<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+				and questionId = #{questionId}
+			</if>
+		</where>
+	</select>
+	<!-- 문항순서 조회 2 -->
+	<select id ="partcopySelectQuestion" resultMap="SlQuestionResultMap">
+		SELECT questionId, projectId, hardCodingId, questionName, questionHeader, questionTitle, questionFooter, questionOption, questionType, questionDivision, questionLogic, questionOrder, responseLimit, regDate, checkNum, viewType, deleteYn, pageType
+		FROM sl_question
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId}
+			</if>
+			<if test= "questionOrder != null and !questionOrder.equals('') and questionOrder > 0" >
+				and questionOrder > #{questionOrder}
+			</if>
+		</where>
+	</select>
+	<update id="insertPartcopySlExample">
+		insert into sl_example (questionId, projectId, exampleText, exampleLogicText, exampleValue, exampleOrder, columnName, regDate, deleteYn, pageType)
+		select #{questionId} as questionId, #{projectId} as projectId, exampleText, exampleLogicText, exampleValue, exampleOrder, CONCAT('copy_',columnName) as columnName, regDate, deleteYn, pageType
+		from sl_example
+		where questionId = #{copyTagetQuestionId}
+	</update>
+	<!-- 문항조회  -->
+	<select id ="selectPartcopySlQuestion" resultMap="SlQuestionResultMap">
+		select
+			<include refid ="Column_SlQuestion" /> 
+		from sl_question
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId} 
+			</if>	
+			<if test= "questionId != null and !questionId.equals('') and questionId > 0" >
+				and questionId = #{questionId}
+			</if>		
+			<if test= "questionName != null and !questionName.equals('')" >
+				and questionName = #{questionName} 
+			</if>
+			and deleteYn = 'N'
+		</where>
+		LIMIT 1;
+	</select>
+	<!-- 문항 순서-->
+	<update id="insertPartcopySlQuestionViewPage">
+		insert into sl_questionViewPage (projectId, pageTitleQuestionId, pageTitleQuestionName, pageTitleQuestionCheckNum, pageQuestionIds, pageQuestionNames, pageOrder, regdate, pageType)
+		select #{projectId} as projectId, #{questionId} as pageTitleQuestionId, #{questionName} as pageTitleQuestionName, #{checkNum} as pageTitleQuestionCheckNum, CONCAT('>',#{questionId}) as pageQuestionIds, CONCAT('>',#{questionName}) as pageQuestionNames, #{questionOrder} as pageOrder, regdate, pageType
+		from sl_questionViewPage
+		where pageTitleQuestionId = #{copyTagetQuestionId}
+	</update>
+	
+	<!-- redirectUrl 설정 -->
+	<update id="updateCType">
+		update ${tableName} 
+		<trim prefix="set " suffixOverrides="," > 
+			<if test="cType != null and !cType.equals('') and cType > 0" >
+        		cType = #{cType},
+      		</if>      		
+		</trim>
+		<where>
+			<if test= "projectId != null and !projectId.equals('') and projectId > 0" >
+				and projectId = #{projectId}
+			</if>
+			<if test= "uCode != null and !uCode.equals('') and uCode > 0" >
+				and uCode = #{uCode}
+			</if>
+		</where>
+	</update>
+
+</mapper>

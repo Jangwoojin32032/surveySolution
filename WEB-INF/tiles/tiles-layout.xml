@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions> 
+
+	<definition name="content-definition" template="/WEB-INF/tiles/layouts/contentLayout.jsp">
+		<!-- <put-attribute name="title" value="SurveyProject Title" /> -->
+	</definition>
+	<definition name="survey-definition" template="/WEB-INF/tiles/layouts/surveyLayout.jsp" />
+	
+	<definition name="/login/*" extends="content-definition">
+		<put-attribute name="jsfile" value="login/{1}.js" />
+		<put-attribute name="body" value="/WEB-INF/views/login/{1}.jsp" /> 
+	</definition>
+	<definition name="/externalAccess/project/projectReg" extends="content-definition">
+		<put-attribute name="jsfile" value="externalAccess/project/projectReg.js" />
+		<put-attribute name="body" value="/WEB-INF/views/project/projectReg.jsp" />
+	</definition>
+	<definition name="/survey/*" extends="survey-definition">
+		<put-attribute name="jsfile" value="survey/{1}.js" />
+		<put-attribute name="body" value="/WEB-INF/views/survey/{1}.jsp" /> 
+	</definition>
+	<definition name="/popup/*" extends="content-definition">
+		<put-attribute name="jsfile" value="popup/{1}.js" />
+		<put-attribute name="body" value="/WEB-INF/views/popup/{1}.jsp" /> 
+	</definition>
+	
+	<definition name="base-definition" template="/WEB-INF/tiles/layouts/defaultLayout.jsp">
+		<put-attribute name="title" value="SurveyProject Title" />
+		<put-attribute name="header" value="/WEB-INF/tiles/template/defaultHeader.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/template/defaultFooter.jsp" />
+	</definition>
+	<definition name="*/*" extends="base-definition">
+		<put-attribute name="jsfile" value="{1}/{2}.js" /> 
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" /> 
+	</definition>
+	<definition name="*/*/*" extends="base-definition">
+		<put-attribute name="jsfile" value="{1}/{2}/{3}.js" />
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition> 
+	
+</tiles-definitions>
+
